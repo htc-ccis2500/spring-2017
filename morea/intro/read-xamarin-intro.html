@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title> Install Git | CCIS2500 Spring 2017 </title>
+  <title> Intro to Xamarin | CCIS2500 Spring 2017 </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 
@@ -96,79 +96,66 @@
       
       <li><a href="/spring-2017/">Home</a></li>
       <li><a href="/spring-2017/modules">Modules</a></li>
-      <li><a href="/spring-2017/modules/getting-started">Getting Started</a></li>
-      <li class="active">Install Git</li>
+      <li><a href="/spring-2017/modules/mobile-intro">Intro to Xamarin</a></li>
+      <li class="active">Intro to Xamarin</li>
     </ol>
   </div>
 </div>
 
 
 <div class="container">
-  <h1 id="install-git">Install Git</h1>
-<p>How to install git on Windows and configure it for use on a public or private computer.</p>
+  <h2 id="intro-to-xamarin">Intro to Xamarin</h2>
+<p>An introduction mobile development in Visual Studio using C#/.Net with Xamarin .</p>
 
-<h2 id="windows-users">Windows Users</h2>
-<p>There are two choices for installing git on Windows for this course.  You may download and install git through the Visual Studio installer, or you may install git directly from the web.</p>
+<p>Microsoft Virtual Academy has a video series to introduce mobile application development with Xamarin.  We will use these video’s to introduce ourselves to these new tools now included in Visual Studio 2015.</p>
 
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-info" role="alert">
   <div class="media">
     <div class="media-left media-top">
-      <img class="emoji" title=":exclamation:" alt=":exclamation:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2757.png" height="20" width="20" align="absmiddle">
+      <img class="emoji" title=":dizzy:" alt=":dizzy:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4ab.png" height="20" width="20" align="absmiddle">
     </div>
     <div class="media-body">
-      <p>Be sure to note the information on configuration at the bottom of this page.</p>
+      <p>As you watch the videos, make notes on things that are not familiar to you so that you can ask questions and locate additional information to learn more about how various mobile apps are developed and deployed.</p>
 
     </div>
   </div>
 </div>
 
-<h3 id="visual-studio-install">Visual Studio Install</h3>
-<p>If you have MS Visual Studio 2015 installed, go to Settings to modify the installation for Visual Studio.</p>
+<h3 id="what-is-xamarin">What is Xamarin?</h3>
+<p>This video introduces the video series, speakers, and the Xamarin tools.</p>
 
-<p>At the bottom, expand “Common Tools” and check the box for Git for Windows.<br>
-Optionally you may also check the box to install the GitHub extension for Visual Studio.</p>
+<div style="padding:20px">
+<!-- This is a non-responsive embed -->
+<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/xamarin-for-absolute-beginners-16182/Video-Introducing-Xamarin-fPHWqptJC_5705846048" width="636" height="480" allowfullscreen="" frameborder="0"></iframe>
+</div>
 
-<div style="padding:10px">
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-install-git-options.png" alt="Screenshot showing git options in VS Installer.">
+<h3 id="first-project">First project</h3>
+<p>A walk-through of creating your first mobile project in Visual Studio with Xamarin.Forms.  This allows you to create one project using Visual Studio to target multiple mobile platforms.  In Visual Studio you will see this as one “solution” with multiple “projects”.  There will be shared code in a portable class library, plus code for each mobile platform that we will target.</p>
+
+<div class="alert alert-info" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":dizzy:" alt=":dizzy:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4ab.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>When creating your project, if you do not have a Mac, just close the window to connect to Mac.</p>
+
     </div>
   </div>
 </div>
 
-<h3 id="stand-alone-install">Stand-alone Install</h3>
-<p>You can get it from the <a href="https://git-scm.com/download/win">Git-SCM Downloads</a>.</p>
-
-<p>I recommend that you keep the default install settings suggested by the installer, specifically:</p>
-<div class="row">
-<div class="col-md-6">
-<img class="img-responsive" src="/spring-2017/morea/getting-started/images/git-install-opt1.png" alt="Screenshot of install options">
-</div>
-<div class="col-md-6">
-<img class="img-responsive" src="/spring-2017/morea/getting-started/images/git-install-opt2.png" alt="Screenshot of install options">
-</div>
+<div style="padding:20px">
+<!-- This is a non-responsive embed -->
+<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/xamarin-for-absolute-beginners-16182/Video-Exploring-a-Xamarin-project-afFnSqtJC_1505846048" width="636" height="480" allowfullscreen="" frameborder="0"></iframe>
 </div>
 
-<p><br>
-This will install a few different options that allow you to work with Git on a Windows computer.  You may choose any of them you like, but I would recommend GitBash as it will be closest to what you may see from my examples.</p>
+<h3 id="debugging-your-app">Debugging your app</h3>
+<p>This video walks you through testing your mobile application using the emulators in Visual Studio.  Unless you have a Mac, you will not be able to test using the iOS emulator, but you can test using Android and Windows.</p>
 
-<h2 id="configure-git">Configure Git</h2>
-<p>Before you dive in, you’ll want to configure git with your user information. In the commands below, fill in your GitHub name and the email used with your GitHub account.  The email address is what will tie your activity to your account.  <strong>Make sure that you are using the same email and check for typos.</strong></p>
-
-<h3 id="config-for-public-shared-computer">Config for Public (Shared) Computer</h3>
-<p>Use this only for a computer which is public or shared.  This configuration is applied <strong>only to the current git repository directory</strong>.  It must be repeated for each repository you clone or create.</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git config user.name <span class="s2">"User Name"</span>
-<span class="gp">$ </span>git config user.email <span class="s2">"user@email"</span></code></pre></figure>
-
-<p>I also recommend saving this git config customized with your information as a Gist on GitHub so that it is easily available for you to use on any computer.</p>
-
-<h3 id="config-for-personal-home-computer">Config for Personal (Home) Computer</h3>
-<p>Use this only for a computer where you are the only GitHub user.  This config is applied <em>globally</em> across all git repositories.</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git config --global user.name <span class="s2">"User Name"</span>
-<span class="gp">$ </span>git config --global user.email <span class="s2">"user@email"</span></code></pre></figure>
-
+<div style="padding:20px">
+<!-- This is a non-responsive embed -->
+<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/xamarin-for-absolute-beginners-16182/Video-Using-emulators-HmeJtqtJC_8005846048" width="636" height="480" allowfullscreen="" frameborder="0"></iframe>
+</div>
 
 </div>
 
