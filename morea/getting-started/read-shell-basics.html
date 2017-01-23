@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Shell Basics | CCIS2500 Spring 2017 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/spring-2017/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/spring-2017/css/style.css">
+  <link rel="stylesheet" href="/spring-2017/css/syntax.css">
+  <link rel="shortcut icon" href="/spring-2017/favicon.ico" type="image/x-icon"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+  <![endif]-->
+
+  <!-- Load Bootstrap JavaScript components -->
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  
+  <script type="text/javascript"
+          src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-63189236-6', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+
+  <script>
+    $(window).load(function () {
+      // If on a page associated with a navbar item, make its navbar item 'active'.
+      $('.navbar-nav').find('a[href="' + location.pathname + '"]').parents('li').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+<!-- Responsive navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <!--  Display three horizontal lines when navbar collapsed. -->
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/spring-2017/index.html"> CCIS2500 Spring 2017 </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/spring-2017/modules/">Modules</a></li>
+        
+        <li><a href="/spring-2017/outcomes/">Outcomes</a></li>
+        
+        
+        <li><a href="/spring-2017/readings/">Readings</a></li>
+        
+        
+        <li><a href="/spring-2017/experiences/">Experiences</a></li>
+        
+        
+        <li><a href="/spring-2017/assessments/">Assessments</a></li>
+        
+        
+        <li><a href="/spring-2017/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="breadcrumb-bar">
+  <div class="container">
+    <ol class="breadcrumb">
+      
+      <li><a href="/spring-2017/">Home</a></li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/getting-started">Getting Started</a></li>
+      <li class="active">Shell Basics</li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="shell-basics">Shell Basics</h1>
+<p>When I include shell commands in the notes, the lines will begin with a $ (dollar sign). That indicates the prompt or the start of the shell command line. The <em>prompt</em> will look different based on what type of computer you are using, so we use the $ to indicate the prompt in a generic way.  <em>When entering commands do not type in the $; only type in the text that follows it.</em></p>
+
+<p>Having the $ there to indicate the prompt is important as it allows us to differentiate commands that you would type in from the results of entering that command.  Any lines without the $ at the beginning of the line, will show you sample output from entering a command. Note that many commands do not give you output when successful.</p>
+
+<p>For example, the <code class="highlighter-rouge">pwd</code> command tells you your current working directory. Basically, this tells you where you are located within your computer’s file system tree.</p>
+
+<div style="padding:10px">
+<div class="row">
+<div class="col-xs-12 col-md-6">
+  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nv">$ </span><span class="nb">pwd</span>
+  /Users/marymosman/Development/html/students
+  </code></pre></figure>
+
+</div>
+</div>
+</div>
+
+<p>When you try out this command, only type <code class="highlighter-rouge">pwd</code> into your shell window, do not type the $, then hit enter. It will output your current working directory on the next line, which will be different from the example shown.  It will then give you a prompt again.</p>
+
+<p>This is what it actually looks like on my computer.  I’m running on a Mac, so this is the Terminal.</p>
+<div style="padding:10px">
+<div class="row">
+<div class="col-xs-12 col-md-6">
+   <img class="img-responsive" src="/spring-2017/morea/getting-started/images/terminal-pwd-cmd.png" alt="Terminal showing pwd command" />
+</div>
+</div>
+</div>
+
+<p>There are really only two other basic shell commands that you need to know to get through this course - <code class="highlighter-rouge">ls</code> and <code class="highlighter-rouge">cd</code>.</p>
+
+<p>The <code class="highlighter-rouge">ls</code>, or list, command will list all of the files and directories inside the current working directory.</p>
+
+<div style="padding:10px">
+<div class="row">
+<div class="col-xs-12 col-md-6">
+   
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">   <span class="nv">$ </span>ls
+   Gemfile        _data          _sass           javascripts
+   README.md      _includes      assets          stylesheets
+   _config.yml    _layouts       index.html
+   </code></pre></figure>
+
+</div>
+<div class="col-xs-12 col-md-6">
+  <img class="img-responsive" src="/spring-2017/morea//getting-started/images/terminal-ls-cmd.png" alt="Terminal showing ls command" />
+</div>
+</div>
+</div>
+
+<p>The <code class="highlighter-rouge">cd</code>, or change directory, command will change your working directory. When you enter the command, you type the directory to change to after the <code class="highlighter-rouge">cd</code>.  So if we want to go into the _data directory, we would enter:</p>
+
+<div style="padding:10px">
+<div class="row">
+<div class="col-xs-12 col-md-6">
+  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nv">$ </span><span class="nb">cd </span>_data
+  </code></pre></figure>
+
+</div>
+<div class="col-xs-12 col-md-6">
+  <img class="img-responsive" src="/spring-2017/morea//getting-started/images/terminal-cd-cmd.png" alt="Terminal showing cd command" />
+</div>
+</div>
+</div>
+
+<p>Notice there is no output this time.
+The cd command will not give output unless there is an error.  Make sure to watch for those.</p>
+
+<p>To go up a directory you use two dots/periods.</p>
+
+<div style="padding:10px">
+<div class="row">
+<div class="col-xs-12 col-md-6">
+  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nv">$ </span><span class="nb">cd</span> ..
+  </code></pre></figure>
+
+</div>
+<div class="col-xs-12 col-md-6">
+  <img class="img-responsive" src="/spring-2017/morea//getting-started/images/terminal-cd2-cmd.png" alt="Terminal showing cd .. command" />
+</div>
+</div>
+</div>
+
+<p>Again there is no output, but you can use the <code class="highlighter-rouge">pwd</code> command to see that the working directory has changed.</p>
+
+<h2 id="git-commands">Git Commands</h2>
+<p>The GitHub Student Directory assignment walks you through the GitHub process that you’ll use for your assignments.  But to give you a summary of all the commands you’ll use in the shell on one page, I’ll quickly introduce the key git commands here.</p>
+
+<h3 id="clone">Clone</h3>
+<p>The <code class="highlighter-rouge">git clone</code> command will create a local copy of your repository from GitHub. The GitHub repository, what you see when looking at the website, lives on their servers “in the cloud”.  That is a remote repository.  To work on your files, you need a local repository; one that is on your computer.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git clone &lt;clone-url&gt;</code></pre></figure>
+
+<h3 id="status">Status</h3>
+<p>The <code class="highlighter-rouge">git status</code> command will give you the current status of your local repository. It will show you if you have changes that are untracked (not added), added and ready for commit, and how different your local repository is from the remote repository that you cloned from.</p>
+
+<p>For example:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git status
+On branch gh-pages
+Your branch is up-to-date with <span class="s1">'origin/gh-pages'</span>.
+Changes not staged <span class="k">for </span>commit:
+  <span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to update what will be committed<span class="o">)</span>
+  <span class="o">(</span>use <span class="s2">"git checkout -- &lt;file&gt;..."</span> to discard changes <span class="k">in </span>working directory<span class="o">)</span>
+
+	modified:   _data/summer_2016/mbmosman.yml
+
+Untracked files:
+  <span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to include <span class="k">in </span>what will be committed<span class="o">)</span>
+
+	_data/summer_2016/mbmosman2.yml
+
+no changes added to commit <span class="o">(</span>use <span class="s2">"git add"</span> and/or <span class="s2">"git commit -a"</span><span class="o">)</span></code></pre></figure>
+
+<h3 id="add">Add</h3>
+<p>The <code class="highlighter-rouge">git add</code> command will stage, or mark, your local changes for commit. Changes that have been added are tracked, and changes that have not been added yet are untracked and will not be included in any commits that you make.</p>
+
+<p>To add all changes, you can use this shortcut:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git add .</code></pre></figure>
+
+<p>To add individual changes, you can use add plus the file name or directory to add:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git add &lt;file-or-directory-name&gt;</code></pre></figure>
+
+<h3 id="commit">Commit</h3>
+<p>The commit command will save and version your changes to your local repository. This saves the time of the commit, all of the changes to the staged (added) files, as well as the message that you enter.  These changes are then available to push to the remote repository.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git commit -m <span class="s2">"added new file"</span>
+On branch gh-pages
+Your branch is ahead of <span class="s1">'origin/gh-pages'</span> by 1 commit.
+  <span class="o">(</span>use <span class="s2">"git push"</span> to publish your <span class="nb">local </span>commits<span class="o">)</span>
+ 1 file changed, 3 insertions<span class="o">(</span>+<span class="o">)</span>
+ create mode 100644 _data/summer_2016/mbmosman2.yml</code></pre></figure>
+
+<p>Notice that the output will tell you which branch you are on (for this class that will usually be gh-pages), how many commits your local repository is ahead of the remote, and how many files were changed as part of this commit.</p>
+
+<h3 id="push">Push</h3>
+<p>The <code class="highlighter-rouge">git push</code> command sends your local changes to the remote repository.</p>
+
+<p>If your local and remote branches match, you can just use the short form of the command:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git push
+Counting objects: 5, <span class="k">done</span>.
+Delta compression using up to 8 threads.
+Compressing objects: 100% <span class="o">(</span>5/5<span class="o">)</span>, <span class="k">done</span>.
+Writing objects: 100% <span class="o">(</span>5/5<span class="o">)</span>, 502 bytes | 0 bytes/s, <span class="k">done</span>.
+Total 5 <span class="o">(</span>delta 3<span class="o">)</span>, reused 0 <span class="o">(</span>delta 0<span class="o">)</span>
+To https://github.com/mbMosman/students.git
+   182b32c..2823398  gh-pages -&gt; gh-pages</code></pre></figure>
+
+<p>Notice the output include a status to show it is 100% done and where it pushed the changes to.</p>
+
+<p>If your local and remote branches are different, you can choose which remote branch to push to:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git push origin &lt;remote-branch-name&gt;</code></pre></figure>
+
+<h2 id="other-resources">Other Resources</h2>
+<p>While this is enough to get by for this course, shell commands are important tools for IT Professionals. This article from LifeHacker offers a quick overview of why you should learn the command lilne, and how to do it:  <a href="http://lifehacker.com/5990668/master-the-command-line-this-weekend">Master the Command Line This Weekend</a>.</p>
+
+<p>Codecademy also has an online course to <a href="https://www.codecademy.com/learn/learn-the-command-line">Learn the Command Line</a>.  Unit 1 and Unit 2 provide sufficient knowledge for this course, and the last time I checked you were able to work through those with a free account.  There are also additional units that will teach several other common commands.</p>
+
+</div>
+
+
+
+
+<script src="/spring-2017/js/scrollIfAnchor.js"></script>
+
+<div class="footer-background hidden-print">
+  <footer>
+    <div class="container page-footer">
+      
+      <p>This course was developed for <a href="https://www.hennepintech.edu/">Hennepin Technical College</a> by <a href="https://www.linkedin.com/in/mary-mosman-43523976">Mary Mosman</a>.</p>
+
+<p>This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License" style="vertical-align: top;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a></p>
+
+      
+      <p style="margin: 0">This website is developed using the <a href="http://morea-framework.github.io/">Morea Framework</a><br>
+        Last update on: <span>2017-01-23 14:27:35 -0600</span></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

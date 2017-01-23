@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title> Course Tools &amp; Tech | CCIS2500 Spring 2017 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/spring-2017/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/spring-2017/css/style.css">
+  <link rel="stylesheet" href="/spring-2017/css/syntax.css">
+  <link rel="shortcut icon" href="/spring-2017/favicon.ico" type="image/x-icon">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+  <![endif]-->
+
+  <!-- Load Bootstrap JavaScript components -->
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-63189236-6', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+
+  <script>
+    $(window).load(function () {
+      // If on a page associated with a navbar item, make its navbar item 'active'.
+      $('.navbar-nav').find('a[href="' + location.pathname + '"]').parents('li').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+<!-- Responsive navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <!--  Display three horizontal lines when navbar collapsed. -->
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/spring-2017/index.html"> CCIS2500 Spring 2017 </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/spring-2017/modules/">Modules</a></li>
+        
+        <li><a href="/spring-2017/outcomes/">Outcomes</a></li>
+        
+        
+        <li><a href="/spring-2017/readings/">Readings</a></li>
+        
+        
+        <li><a href="/spring-2017/experiences/">Experiences</a></li>
+        
+        
+        <li><a href="/spring-2017/assessments/">Assessments</a></li>
+        
+        
+        <li><a href="/spring-2017/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="breadcrumb-bar">
+  <div class="container">
+    <ol class="breadcrumb">
+      
+      <li><a href="/spring-2017/">Home</a></li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/getting-started">Getting Started</a></li>
+      <li class="active">Course Tools &amp; Tech</li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="tools">Tools</h1>
+<p>For this course we’ll be working mainly in MS Visual Studio and versioning our code using Git and GitHub. This means that if you generally work on a Mac, you’ll need Windows running either through Boot Camp or a VM such as Parallels, or access to a Windows computer.</p>
+
+<p>You will need:</p>
+
+<ul>
+  <li>MS Visual Studio 2015</li>
+  <li>Git for your OS (can be installed through Visual Studio)</li>
+  <li>a GitHub account (free is fine, use your student email for Education upgrade)</li>
+</ul>
+
+<h3 id="visual-studio">Visual Studio</h3>
+<p>For this course it is important to have Visual Studio 2015 as that is the first version of the Visual Studio product to include the cross-platform mobile development tools that we will be working with in this class.  If you have an older version of Visual Studio, you will need to update though you may be able to keep more than one version of Visual Studio on your computer if needed.</p>
+
+<p>You can get <a href="https://www.visualstudio.com/vs/community/">Visual Studio Community Edition</a> free from the Microsoft Website.  This includes the mobile tools we will be using for this course, so it is sufficient if you do not have access to the Professional or Enterprise versions.</p>
+
+<p>The Enterprise edition is the version installed in the classroom and students have access to this through their Microsoft Imagine (formerly DreamSpark) account.</p>
+
+<div class="alert alert-info" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":notebook:" alt=":notebook:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4d3.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>Additional information on customizing the Visual Studio install for mobile development is found in the reading for this module.</p>
+
+    </div>
+  </div>
+</div>
+
+<h3 id="file--version-management">File &amp; Version Management</h3>
+<p>Configuration files and code are important assets to an organization. Likewise the files you create as part of this course are important assets to you. We will be learning to manage these files professionally using a source code management tool called git which maintains versions of files inside of a repository and <a href="https://github.com/">GitHub</a> a free, public cloud hosting service for your git repositories.</p>
+
+<h3 id="the-shell">The shell</h3>
+<p>As we work with Git and GitHub, I encourage you to use git commands through the shell to manage versioning your project.  There is a Visual Studio extension for Git, but often is it more clear exactly what you are doing if you use a handful of commands manually from the command line.</p>
+
+<div class="alert alert-info" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":notebook:" alt=":notebook:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4d3.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>Additional information on the shell and git/GitHub is found in the reading for this module.</p>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+<script src="/spring-2017/js/scrollIfAnchor.js"></script>
+
+<div class="footer-background hidden-print">
+  <footer>
+    <div class="container page-footer">
+      
+      <p>This course was developed for <a href="https://www.hennepintech.edu/">Hennepin Technical College</a> by <a href="https://www.linkedin.com/in/mary-mosman-43523976">Mary Mosman</a>.</p>
+
+<p>This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License" style="vertical-align: top;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+
+      
+      <p style="margin: 0">This website is developed using the <a href="http://morea-framework.github.io/">Morea Framework</a><br>
+        Last update on: <span>2017-01-23 14:27:35 -0600</span></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

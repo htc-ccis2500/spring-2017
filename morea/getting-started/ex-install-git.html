@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title> Install Git | CCIS2500 Spring 2017 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/spring-2017/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/spring-2017/css/style.css">
+  <link rel="stylesheet" href="/spring-2017/css/syntax.css">
+  <link rel="shortcut icon" href="/spring-2017/favicon.ico" type="image/x-icon">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+  <![endif]-->
+
+  <!-- Load Bootstrap JavaScript components -->
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-63189236-6', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+
+  <script>
+    $(window).load(function () {
+      // If on a page associated with a navbar item, make its navbar item 'active'.
+      $('.navbar-nav').find('a[href="' + location.pathname + '"]').parents('li').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+<!-- Responsive navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <!--  Display three horizontal lines when navbar collapsed. -->
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/spring-2017/index.html"> CCIS2500 Spring 2017 </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/spring-2017/modules/">Modules</a></li>
+        
+        <li><a href="/spring-2017/outcomes/">Outcomes</a></li>
+        
+        
+        <li><a href="/spring-2017/readings/">Readings</a></li>
+        
+        
+        <li><a href="/spring-2017/experiences/">Experiences</a></li>
+        
+        
+        <li><a href="/spring-2017/assessments/">Assessments</a></li>
+        
+        
+        <li><a href="/spring-2017/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="breadcrumb-bar">
+  <div class="container">
+    <ol class="breadcrumb">
+      
+      <li><a href="/spring-2017/">Home</a></li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/getting-started">Getting Started</a></li>
+      <li class="active">Install Git</li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="install-git">Install Git</h1>
+<p>How to install git on Windows and configure it for use on a public or private computer.</p>
+
+<h2 id="windows-users">Windows Users</h2>
+<p>There are two choices for installing git on Windows for this course.  You may download and install git through the Visual Studio installer, or you may install git directly from the web.</p>
+
+<div class="alert alert-danger" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":exclamation:" alt=":exclamation:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2757.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>Be sure to note the information on configuration at the bottom of this page.</p>
+
+    </div>
+  </div>
+</div>
+
+<h3 id="visual-studio-install">Visual Studio Install</h3>
+<p>If you have MS Visual Studio 2015 installed, go to Settings to modify the installation for Visual Studio.</p>
+
+<p>At the bottom, expand “Common Tools” and check the box for Git for Windows.<br>
+Optionally you may also check the box to install the GitHub extension for Visual Studio.</p>
+
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-install-git-options.png" alt="Screenshot showing git options in VS Installer.">
+    </div>
+  </div>
+</div>
+
+<h3 id="stand-alone-install">Stand-alone Install</h3>
+<p>You can get it from the <a href="https://git-scm.com/download/win">Git-SCM Downloads</a>.</p>
+
+<p>I recommend that you keep the default install settings suggested by the installer, specifically:</p>
+<div class="row">
+<div class="col-md-6">
+<img class="img-responsive" src="/spring-2017/morea/getting-started/images/git-install-opt1.png" alt="Screenshot of install options">
+</div>
+<div class="col-md-6">
+<img class="img-responsive" src="/spring-2017/morea/getting-started/images/git-install-opt2.png" alt="Screenshot of install options">
+</div>
+</div>
+
+<p><br>
+This will install a few different options that allow you to work with Git on a Windows computer.  You may choose any of them you like, but I would recommend GitBash as it will be closest to what you may see from my examples.</p>
+
+<h2 id="configure-git">Configure Git</h2>
+<p>Before you dive in, you’ll want to configure git with your user information. In the commands below, fill in your GitHub name and the email used with your GitHub account.  The email address is what will tie your activity to your account.  <strong>Make sure that you are using the same email and check for typos.</strong></p>
+
+<h3 id="config-for-public-shared-computer">Config for Public (Shared) Computer</h3>
+<p>Use this only for a computer which is public or shared.  This configuration is applied <strong>only to the current git repository directory</strong>.  It must be repeated for each repository you clone or create.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git config user.name <span class="s2">"User Name"</span>
+<span class="gp">$ </span>git config user.email <span class="s2">"user@email"</span></code></pre></figure>
+
+<p>I also recommend saving this git config customized with your information as a Gist on GitHub so that it is easily available for you to use on any computer.</p>
+
+<h3 id="config-for-personal-home-computer">Config for Personal (Home) Computer</h3>
+<p>Use this only for a computer where you are the only GitHub user.  This config is applied <em>globally</em> across all git repositories.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git config --global user.name <span class="s2">"User Name"</span>
+<span class="gp">$ </span>git config --global user.email <span class="s2">"user@email"</span></code></pre></figure>
+
+
+</div>
+
+
+
+
+<script src="/spring-2017/js/scrollIfAnchor.js"></script>
+
+<div class="footer-background hidden-print">
+  <footer>
+    <div class="container page-footer">
+      
+      <p>This course was developed for <a href="https://www.hennepintech.edu/">Hennepin Technical College</a> by <a href="https://www.linkedin.com/in/mary-mosman-43523976">Mary Mosman</a>.</p>
+
+<p>This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License" style="vertical-align: top;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+
+      
+      <p style="margin: 0">This website is developed using the <a href="http://morea-framework.github.io/">Morea Framework</a><br>
+        Last update on: <span>2017-01-23 14:27:35 -0600</span></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

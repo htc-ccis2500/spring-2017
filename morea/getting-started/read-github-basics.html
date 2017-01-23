@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> GitHub Basics | CCIS2500 Spring 2017 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/spring-2017/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/spring-2017/css/style.css">
+  <link rel="stylesheet" href="/spring-2017/css/syntax.css">
+  <link rel="shortcut icon" href="/spring-2017/favicon.ico" type="image/x-icon"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+  <![endif]-->
+
+  <!-- Load Bootstrap JavaScript components -->
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  
+  <script type="text/javascript"
+          src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-63189236-6', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+
+  <script>
+    $(window).load(function () {
+      // If on a page associated with a navbar item, make its navbar item 'active'.
+      $('.navbar-nav').find('a[href="' + location.pathname + '"]').parents('li').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+<!-- Responsive navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <!--  Display three horizontal lines when navbar collapsed. -->
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/spring-2017/index.html"> CCIS2500 Spring 2017 </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/spring-2017/modules/">Modules</a></li>
+        
+        <li><a href="/spring-2017/outcomes/">Outcomes</a></li>
+        
+        
+        <li><a href="/spring-2017/readings/">Readings</a></li>
+        
+        
+        <li><a href="/spring-2017/experiences/">Experiences</a></li>
+        
+        
+        <li><a href="/spring-2017/assessments/">Assessments</a></li>
+        
+        
+        <li><a href="/spring-2017/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="breadcrumb-bar">
+  <div class="container">
+    <ol class="breadcrumb">
+      
+      <li><a href="/spring-2017/">Home</a></li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/getting-started">Getting Started</a></li>
+      <li class="active">GitHub Basics</li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="container">
+  <h2 id="introduction">Introduction</h2>
+<p>Throughout this course, we will be using git and <a href="http://github.com/">GitHub</a> to manage our projects. Git is an popular open source version control system, originally developed by Linus Torvalds (the creator of the Linux kernel). A large number of software projects, both open source and commercial, rely on Git for version control.</p>
+
+<p>Version control provides many benefits to individuals and teams. In addition to providing a safe backup of the latest version of your files, it also maintains a history of changes so that you can see how the files looked in the past.  If you get something working, save it to your version control system, then later break it, you can return easily to the working version.  In a team project, version control helps avoid confusion that may occur when multiple people are editing the same files.  It provides a central spot for all team members to get and save files, and assists with merging changes from different people.</p>
+
+<p><a href="http://github.com/">GitHub</a> allows us to have a centralized location to store and manage the git repositories.  While git can version files locally (on your computer), it is less risky to have copies of those versioned files in another location in case something happens to the files on your computer.  Since the repositories on GitHub are public, it is a great source for developers to show off their portfolio and to share your work with others.</p>
+
+<div style="padding:20px">
+<div class="row">
+<div class="col-xs-12 col-md-8 col-md-push-2">
+  <iframe src="https://player.vimeo.com/video/89542305" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+</div>
+
+<p>Understanding how to work with Git (the underlying version control system behind GitHub) and <a href="http://github.com/">GitHub</a> itself are both very important first steps in this course, but learning to work with source code management tools more generally is a crucially important job skill.</p>
+
+<h2 id="get-a-github-account">Get a GitHub Account</h2>
+<p>Get yourself setup with a GitHub account.  I recommend that you add your name to the account so that others can easily search for and find your account and repositories. If you use your student email, you can later request a free Personal account upgrade through the GitHub <a href="https://education.github.com/pack">Student Developer Pack</a>.  If you don’t have access to your student mail right now, you can always come back and add an additional email later.</p>
+
+<div style="padding:20px">
+<div class="row">
+<div class="col-xs-12 col-md-8 col-md-push-2">
+  <div style="padding:10px 0">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/ezxRcdJ8glM" frameborder="0" allowfullscreen=""></iframe>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+
+<h2 id="workflow">Workflow</h2>
+<p>Most assignments will begin with a starter repository that you will <em>fork</em>.  This gives you a personal copy of the repository and its files.  This repository will usually contain the general layout for the project and any starter code that you should have to begin.  However this personal copy initially exists only on GitHub.  You’ll need to <em>clone</em> the repository to your computer, so that you can make changes to the files.</p>
+
+<p>Once you’ve made your changes and tested them, you need to stage your changes so that git knows the files are ready to be versioned.  It does not just version all of the files in your repository.  It will only track and version files you specifically add to the staged version.  When all your files are staged, then you do a <em>commit</em>.  This marks them with a version stamp inside your local repository.  It’s a good habit to commit code locally often. I suggest that you make specific notes on what you’ve done in the commit messages.  This gives you a point to go back to if you need or want to undo something.</p>
+
+<p>When you’re done with a chunk of work, or just need to save it <em>in the cloud</em> to go home for the night, you <em>push</em> your changes up to GitHub.  If you work on multiple computers, you might be wondering how to get those changes on that other computer.  To do this, you <em>fetch</em> or <em>pull</em> them.  When you are done with the assignment and are ready to submit it for grading, you create a <em>pull request</em>.  This is done on the GitHub website and allows me to give you in-code feedback as I  grade.</p>
+
+</div>
+
+
+
+
+<script src="/spring-2017/js/scrollIfAnchor.js"></script>
+
+<div class="footer-background hidden-print">
+  <footer>
+    <div class="container page-footer">
+      
+      <p>This course was developed for <a href="https://www.hennepintech.edu/">Hennepin Technical College</a> by <a href="https://www.linkedin.com/in/mary-mosman-43523976">Mary Mosman</a>.</p>
+
+<p>This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License" style="vertical-align: top;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a></p>
+
+      
+      <p style="margin: 0">This website is developed using the <a href="http://morea-framework.github.io/">Morea Framework</a><br>
+        Last update on: <span>2017-01-23 14:27:35 -0600</span></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
