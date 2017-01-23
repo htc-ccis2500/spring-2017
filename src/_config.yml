@@ -1,7 +1,7 @@
-name: "CHANGE ME"  # CHANGE ME
-baseurl: /morea-core-custom # CHANGE ME
-github_org_url: https://github.com/mbmosman/morea-core # CHANGE ME
-github_org_name: "CHANGE ME" # CHANGE ME
+name: "CCIS2500 Semester"   # CHANGE ME
+baseurl: /semester # CHANGE ME
+github_org_url: https://github.com/htc-ccis2500-semester # CHANGE ME
+github_org_name: "HTC CCIS2500 Semester" # CHANGE ME
 
 # The following properties should not need to change semester to semester.
 markdown: kramdown
@@ -25,9 +25,8 @@ gems:
   - jekyll-gist
   - jemoji
 
-# CHANGE for each course template, but no need to change each semester
-morea_course: CHANGE ME
-morea_domain: http://changeme.github.io/
-morea_google_analytics_tracking_id: "UA-XXXXXXXX-X"
-googleCalendarApiKey: changeme
-googleCalendarId: 'change-me@group.calendar.google.com'
+morea_course: CCIS 2500
+morea_domain: http://htc-ccis2500.github.io/
+morea_google_analytics_tracking_id: "UA-63189236-6"
+googleCalendarApiKey: AIzaSyC6v2gy8gUv3Ra1wBeZHVB99SD0r1sHdjE
+googleCalendarId: 'nvb9t6vbhk4gtp3jdpdfdb69l8@group.calendar.google.com'
