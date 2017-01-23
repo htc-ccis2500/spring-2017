@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ $# != 2 ]; then
-    echo "morea-vanilla-install <github account> <github repo>"
+if [ $# != 1 ]; then
+    echo "morea-vanilla-install <github repo>"
     exit 1
 fi
 
@@ -17,11 +17,11 @@ fi
 
 
 echo "Creating master/ directory with repo."
-( set -x ; git clone git@github.com:$1/$2.git master)
+( set -x ; git clone git@github.com:htc-ccis2500/$1.git master)
 
 echo ""
 echo "Creating orphan branch, empty gh-pages/ directory."
-( set -x ; git clone git@github.com:$1/$2.git gh-pages)
+( set -x ; git clone git@github.com:htc-ccis2500/$1.git gh-pages)
 
 if [ -d "./gh-pages" ]; then
   ( set -x ; cd gh-pages; git checkout --orphan gh-pages; git rm -rf .; git branch -u origin/gh-pages )
@@ -34,7 +34,7 @@ echo ""
 echo "master/ and gh-pages/ directories created."
 
 echo "Adding a remote called 'core' connected to this course's morea-core-custom (this can fail if already set)"
-(set x; cd ./master; git remote add core https://github.com/htc-ccisXXXX/morea-core-custom.git)
+(set x; cd ./master; git remote add core https://github.com/htc-ccis2500/morea-core-custom.git)
 
 echo "Here are the current upstream repos:"
 (set x; cd ./master; git remote -v)
