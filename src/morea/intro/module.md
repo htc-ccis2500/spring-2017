@@ -1,13 +1,13 @@
 ---
 title: "Intro to Xamarin"
-published: false
+published: true
 morea_id: mobile-intro
 morea_outcomes:
-# - out-shell-basics
+ - out-xamarin-forms
 morea_readings:
-# - read-xamarin-intro
+ - read-xamarin-intro
 morea_experiences:
-# - ex-first-app
+ - ex-first-xamarin-app
 morea_assessments:
 # - asm-github-basics
 morea_type: module
