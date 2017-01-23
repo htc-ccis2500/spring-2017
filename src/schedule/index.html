@@ -26,12 +26,6 @@ title: Schedule
 <div style="margin-bottom: 10px" class="container">
   <h1>Schedule</h1>
 
-
-  <!-- ############### CHANGE ME!!!  ####################################################### -->
-  Update to include class Google Calendar ID and remove this note.
-  <!-- ############### CHANGE ME!!!  ####################################################### -->
-
-
   <div id='calendar'></div>
 </div>
 <script>
@@ -42,15 +36,13 @@ title: Schedule
         eventSources: [
             {
                 // My HTC Events Calendar
-                googleCalendarId: 'pam2qc7v8m3eqordq9llu4b844@group.calendar.google.com',
+                googleCalendarId: '{{ site.googleCalendarApiKey }}',
                 color: '#f26522',  // HTC Orange for college dates & events
                 textColor: 'black'
             },
             {
-// ################### CHANGE ME!!!  ####################################################### -->
                 // Course Specific Calendar
-                googleCalendarId: 'change-me@group.calendar.google.com'
-// ################### CHANGE ME!!!  ####################################################### -->
+                googleCalendarId: '{{ site.googleCalendarId }}'
             }
         ]
     });

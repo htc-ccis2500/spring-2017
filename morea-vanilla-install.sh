@@ -33,8 +33,8 @@ fi
 echo ""
 echo "master/ and gh-pages/ directories created."
 
-echo "Adding a remote called 'core' connected to HTC HTML morea-core-custom (this can fail if already set)"
-(set x; cd ./master; git remote add core https://github.com/htc-ccis1301/morea-core-custom.git)
+echo "Adding a remote called 'core' connected to this course's morea-core-custom (this can fail if already set)"
+(set x; cd ./master; git remote add core https://github.com/htc-ccisXXXX/morea-core-custom.git)
 
 echo "Here are the current upstream repos:"
 (set x; cd ./master; git remote -v)

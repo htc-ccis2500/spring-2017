@@ -29,3 +29,5 @@ gems:
 morea_course: CHANGE ME
 morea_domain: http://changeme.github.io/
 morea_google_analytics_tracking_id: "UA-XXXXXXXX-X"
+googleCalendarApiKey: changeme
+googleCalendarId: 'change-me@group.calendar.google.com'
