@@ -1,13 +1,13 @@
 ---
-title: "Intro to Xamarin"
+title: "Introduction to Xamarin"
 published: true
 morea_id: read-xamarin-intro
 morea_summary: "An introduction mobile development in Visual Studio using C#/.Net with Xamarin ."
 morea_type: reading
 morea_sort_order: 4
 morea_labels:
- - intro
  - Visual Studio
+ - Xamarin.Forms
 ---
 
 ## {{ page.title }}

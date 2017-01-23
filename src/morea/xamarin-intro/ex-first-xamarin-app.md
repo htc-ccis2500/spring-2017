@@ -1,5 +1,5 @@
 ---
-title: "Intro Xamarin Forms App"
+title: "AboutMe App"
 published: true
 morea_id: ex-first-xamarin-app
 morea_type: experience
