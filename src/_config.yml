@@ -1,7 +1,7 @@
-name: "CCIS2500 Semester"   # CHANGE ME
-baseurl: /semester # CHANGE ME
-github_org_url: https://github.com/htc-ccis2500-semester # CHANGE ME
-github_org_name: "HTC CCIS2500 Semester" # CHANGE ME
+name: "CCIS2500 Spring 2017"   # CHANGE ME
+baseurl: /spring-2017          # CHANGE ME
+github_org_url: https://github.com/htc-ccis2500-spring2017 # CHANGE ME
+github_org_name: "HTC CCIS2500 Spring 2017" # CHANGE ME
 
 # The following properties should not need to change semester to semester.
 markdown: kramdown
