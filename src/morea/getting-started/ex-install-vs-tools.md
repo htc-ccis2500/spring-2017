@@ -13,13 +13,27 @@ morea_labels:
 # {{ page.title }}
 {{ page.morea_summary }}
 
-### Customize the Install
+## Requirements
+The mobile tools are new with Visual Studio 2015, but are a part of all editions, including the free Community Edition.
+
+The mobile development tools include emulators for Windows and Android that require either:
+  - Windows 8.1 (x64) Professional edition or higher
+  - Windows 10 Education, Pro or Enterprise (x64) edition (__NOT__ Home edition)
+In addition, you need a processor that supports Client Hyper-V and Second Level Address Translation (SLAT).
+
+{% include alert.html type="tip"
+    content="As a student, you can get the Education Edition of Windows 10 free through your student Imagine account."
+%}
+
+You'll also need a good chunk of disk space.  Depending on options installed, Visual Studio can require 30GB or more of disk space.
+
+## Customize the Install
 Whether you have an existing install or are installing for the first time, the steps to add the mobile tools are similar:
 
 - For a new install, you will want to customize the install when prompted.  
 - For an existing install, go to Settings to modify the installation.
 
-### Mobile Tool Options
+## Mobile Tool Options
 Look for the option "Cross Platform Mobile Development" and check the box to install all of the mobile development tools.  
 
 {% include img-small.html url="/morea/getting-started/images/vs-install-mobile-options.png"
