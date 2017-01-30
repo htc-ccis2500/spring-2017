@@ -48,3 +48,11 @@ If you are limited on space, you may leave the middle two boxes unchecked:
  - Visual C++ Mobile Development
 
 They can always be added later if needed.
+
+## Emulators
+
+### Android
+If you have trouble with the packaged Android emulators, there is an additional installer for a Microsoft Android emulator you can get separately.  The [Visual Studio Emulator for Android](https://www.visualstudio.com/vs/msft-android-emulator/) is said to boot and run faster, is tailored for Visual Studio, and allows saving of various device profiles.
+
+### Windows Phone
+The Windows Phone emulators require an additional install and there are both Windows 8 and Windows 10 universal emulators.  Both of these may be selected from the Visual Studio install customization screen.  

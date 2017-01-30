@@ -4,7 +4,7 @@ published: true
 morea_id: read-xamarin-intro
 morea_summary: "An introduction mobile development in Visual Studio using C#/.Net with Xamarin ."
 morea_type: reading
-morea_sort_order: 4
+morea_sort_order: 1
 morea_labels:
  - Visual Studio
  - Xamarin.Forms

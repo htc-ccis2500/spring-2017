@@ -23,7 +23,9 @@ The following objectives will be addressed in the course:
 - Describe options for building and porting applications for use on other mobile platforms
 
 ## Text Book
-There is no text book required for this course.
+[Creating Mobile Apps with Xamarin.Forms](https://developer.xamarin.com/guides/xamarin-forms/creating-mobile-apps-xamarin-forms/) by Charles Petzold
+
+This book is available free as an eBook from Microsoft Virtual Academy.
 
 ## Course Staff
 
