@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Schedule | CCIS2500 Spring 2017 </title>
+  <title> Family App | CCIS2500 Spring 2017 </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 
@@ -90,51 +90,37 @@
 </div>
 
 
-
 <div class="breadcrumb-bar">
   <div class="container">
     <ol class="breadcrumb">
       
       <li><a href="/spring-2017/">Home</a></li>
-      <li class="active">Schedule</li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/xamarin-basics">Xamarin.Forms App Structure</a></li>
+      <li class="active">Family App</li>
     </ol>
   </div>
 </div>
 
-<!-- Load FullCalendar for schedule page. -->
-<!-- Documentation available at: http://fullcalendar.io/ -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/gcal.js"></script>
 
+<div class="container">
+  <h1 id="family-app">Family App</h1>
+<p>Create a simple Xamarin.Forms application to introduce your family.</p>
 
-<div style="margin-bottom: 10px" class="container">
-  <h1>Schedule</h1>
+<h2 id="make-a-new-xamarinforms-app">Make a New Xamarin.Forms App</h2>
+<p>Create a new Xamarin.Forms application called Family.</p>
 
-  <div id='calendar'></div>
+<p>Add a new <code class="highlighter-rouge">ContentPage</code> class called <code class="highlighter-rouge">FamilyPage</code> to the application.  Add text to the page that introduces your family.  Use bold text to make family member names stand out, and use end of line characters to separate each family member.</p>
+
+<p>Change the application colors and fonts to make your family application unique.</p>
+
+<h2 id="test">Test</h2>
+<p>Test your application using the Android &amp; Windows phone emulators (optionally iOS).  Take a screenshot of your successful test on each platform to place in the assignment submission box.  (It’s helpful if you paste the screenshots into a single MS Word document OR clearly label each image before adding to the assignment box.)</p>
+
+<h2 id="submit">Submit</h2>
+<p>Zip your project and upload it to the Assignment box on D2L.</p>
+
 </div>
-<script>
-  $(document).ready(function() {
-    $('#calendar').fullCalendar({
-        googleCalendarApiKey: 'AIzaSyC6v2gy8gUv3Ra1wBeZHVB99SD0r1sHdjE',
-        eventColor: '#446e9b',
-        eventSources: [
-            {
-                // My HTC Events Calendar
-                googleCalendarId: 'pam2qc7v8m3eqordq9llu4b844@group.calendar.google.com',
-                color: '#f26522',  // HTC Orange for college dates & events
-                textColor: 'black'
-            },
-            {
-                // Course Specific Calendar
-                googleCalendarId: 'nvb9t6vbhk4gtp3jdpdfdb69l8@group.calendar.google.com'
-            }
-        ]
-    });
-});
-</script>
-
 
 
 
