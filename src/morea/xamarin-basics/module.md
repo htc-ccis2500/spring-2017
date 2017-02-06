@@ -5,9 +5,14 @@ morea_id: xamarin-basics
 morea_outcomes:
  - out-xamarin-basics
 morea_readings:
+ - read-oop-intro
+ - read-oop-csharp
  - read-xamarin-basics
+ - read-xamarin-styling
+ - read-xamarin-scrolling
 morea_experiences:
- - ex-myfamily-app
+ - ex-myfamily-app1
+ - ex-myfamily-app2
 morea_assessments:
 # - asm-github-basics
 morea_type: module

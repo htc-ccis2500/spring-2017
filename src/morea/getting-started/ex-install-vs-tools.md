@@ -34,7 +34,7 @@ Whether you have an existing install or are installing for the first time, the s
 - For an existing install, go to Settings to modify the installation.
 
 ## Mobile Tool Options
-Look for the option "Cross Platform Mobile Development" and check the box to install all of the mobile development tools.  
+Look for the option "Cross Platform Mobile Development" and check the box to install the mobile development tools.  
 
 {% include img-small.html url="/morea/getting-started/images/vs-install-mobile-options.png"
     alt="Screenshot showing mobile options in VS Installer."

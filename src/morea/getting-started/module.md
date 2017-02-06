@@ -4,6 +4,7 @@ published: true
 morea_id: getting-started
 morea_outcomes:
  - out-shell-basics
+ - out-git-basics
 morea_readings:
  - read-tools-intro
  - read-github-basics
@@ -12,6 +13,8 @@ morea_readings:
 morea_experiences:
  - ex-install-git
  - ex-install-vs-tools
+ - ex-vs-github-add
+ - ex-vs-github-branches
 morea_assessments:
 # - asm-github-basics
 morea_type: module

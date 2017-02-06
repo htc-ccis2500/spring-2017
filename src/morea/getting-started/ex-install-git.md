@@ -30,7 +30,7 @@ Optionally you may also check the box to install the GitHub extension for Visual
 
 
 ### Stand-alone Install
-You can get it from the [Git-SCM Downloads](https://git-scm.com/download/win).
+You can also download and install git from [Git-SCM Downloads](https://git-scm.com/download/win).
 
 I recommend that you keep the default install settings suggested by the installer, specifically:
 <div class="row">
@@ -49,7 +49,7 @@ This will install a few different options that allow you to work with Git on a W
 Before you dive in, you'll want to configure git with your user information. In the commands below, fill in your GitHub name and the email used with your GitHub account.  The email address is what will tie your activity to your account.  **Make sure that you are using the same email and check for typos.**
 
 ### Config for Public (Shared) Computer
-Use this only for a computer which is public or shared.  This configuration is applied __only to the current git repository directory__.  It must be repeated for each repository you clone or create.  
+Use this for a computer which is public or shared.  This configuration is applied __only to the current git repository directory__.  It must be repeated for each repository you clone or create.  
 {% highlight bash %}
 $ git config user.name "User Name"
 $ git config user.email "user@email"
@@ -58,7 +58,7 @@ $ git config user.email "user@email"
 I also recommend saving this git config customized with your information as a Gist on GitHub so that it is easily available for you to use on any computer.
 
 ### Config for Personal (Home) Computer
-Use this only for a computer where you are the only GitHub user.  This config is applied *globally* across all git repositories.
+Use this __only__ for a computer where you are the only GitHub user.  This config is applied *globally* across all git repositories.
 {% highlight bash %}
 $ git config --global user.name "User Name"
 $ git config --global user.email "user@email"
