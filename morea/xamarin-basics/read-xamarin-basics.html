@@ -108,16 +108,176 @@
 <p>An introduction to the structure of a Xamarin.Forms cross-platform mobile application.</p>
 
 <h2 id="reference-text">Reference Text</h2>
-<p>Chapters 1-3 of <a href="https://developer.xamarin.com/guides/xamarin-forms/creating-mobile-apps-xamarin-forms/">Creating Mobile Apps with Xamarin.Forms</a> by Charles Petzold.</p>
+<p>Chapters 1-2 of <a href="https://developer.xamarin.com/guides/xamarin-forms/creating-mobile-apps-xamarin-forms/">Creating Mobile Apps with Xamarin.Forms</a> by Charles Petzold.</p>
 
-<h2 id="the-user-interface">The User Interface</h2>
-<p>Let’s take a deeper look at the shared code inside a basic Xamarin.Forms portable application project, beginning with the user interface.  We have 3 main categories of objects on the screen:  pages, layouts, and views. If you’ve worked with user interface code in the past these should sound familiar.</p>
+<h2 id="inside-the-app">Inside the App</h2>
+<p>Let’s take a deeper look at the shared code inside a basic Xamarin.Forms portable application project.</p>
 
+<p>First, notice that the main class <code class="highlighter-rouge">App</code> (in the App.cs file) inherits from the <code class="highlighter-rouge">Application</code> class which is part of <code class="highlighter-rouge">Xamarin.Forms</code>.  The code we will be writing is heavily object oriented.  We will be using and extending many classes provided by the Xamarin framework.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">App</span> <span class="p">:</span> <span class="n">Application</span>
+<span class="p">{</span>
+    <span class="p">...</span> <span class="n">code</span> <span class="n">hidden</span> <span class="p">...</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="user-interface">User Interface</h2>
+<p>Next let’s start looking in more depth at the user interface code.  There are 3 main categories of objects that we can have on the screen:  pages, layouts, and views. If you’ve worked with user interface code in the past these types of objects should sound familiar.</p>
+
+<h3 id="pages">Pages</h3>
 <p>The Xamarin.Forms applications are organized into pages.  As you might expect, a page generally fills the device screen.  We might have a single page application, or we might have one with many pages that flow from one to another.  The sample application that we looked at earlier is a single page application built using a <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/"><code class="highlighter-rouge">ContentPage</code></a>.</p>
 
-<p>The <code class="highlighter-rouge">App.cs</code> class sets the <code class="highlighter-rouge">MainPage</code> of the application.  Instead of putting all of the page layout code into the <code class="highlighter-rouge">App.cs</code> file, it is typical to create a custom page class that extends <code class="highlighter-rouge">ContentPage</code> in a new file. The standard convention is to name the class using the name of your application + Page.  For example, for an app called “MyApp” the main page class would be called <code class="highlighter-rouge">MyAppPage</code>.</p>
+<p>The <code class="highlighter-rouge">App</code> class sets the <code class="highlighter-rouge">MainPage</code> of the application.  The template starts you out with a simple page built right inside the <code class="highlighter-rouge">App</code> class constructor itself. It does this by creating a new <code class="highlighter-rouge">ContentPage</code>.  This is one of several different page types supported by Xamarin.Forms. We will look at other types later, but they include <code class="highlighter-rouge">MasterDetailPage</code>, <code class="highlighter-rouge">NavigationPage</code>, <code class="highlighter-rouge">TabbedPage</code>, <code class="highlighter-rouge">TemplatedPage</code>, and <code class="highlighter-rouge">CarouselPage</code>.  (Learn more about the other types in the <a href="">Page</a> class documentation.)</p>
 
-<p>After creating a custom page class, we must update the <code class="highlighter-rouge">App</code> code to create an instance of that class as the <code class="highlighter-rouge">MainPage</code>.</p>
+<h3 id="template-app">Template App</h3>
+<p>Let’s look more closely at how this is done in the template application. The constructor itself uses the object initializer syntax to create a set of nested objects inside of a <code class="highlighter-rouge">ContentPage</code>. This happens in lines 5-17 of the code snippet below.  Then on line 19, we use that to create a new <code class="highlighter-rouge">NavigationPage</code> instance which we use to set the <code class="highlighter-rouge">MainPage</code> property of our <code class="highlighter-rouge">Application</code> object.</p>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><table style="border-spacing: 0"><tbody><tr>
+<td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></td>
+<td class="code"><pre>    <span class="k">public</span> <span class="nf">App</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// The root page of your application
+</span>        <span class="kt">var</span> <span class="n">content</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ContentPage</span>
+        <span class="p">{</span>
+            <span class="n">Title</span> <span class="p">=</span> <span class="s">"HelloXamarin"</span><span class="p">,</span>
+            <span class="n">Content</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StackLayout</span>
+            <span class="p">{</span>
+                <span class="n">VerticalOptions</span> <span class="p">=</span> <span class="n">LayoutOptions</span><span class="p">.</span><span class="n">Center</span><span class="p">,</span>
+                <span class="n">Children</span> <span class="p">=</span> <span class="p">{</span>
+                    <span class="k">new</span> <span class="n">Label</span> <span class="p">{</span>
+                        <span class="n">HorizontalTextAlignment</span> <span class="p">=</span> <span class="n">TextAlignment</span><span class="p">.</span><span class="n">Center</span><span class="p">,</span>
+                        <span class="n">Text</span> <span class="p">=</span> <span class="s">"Welcome to Xamarin Forms!"</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">};</span>
+
+        <span class="n">MainPage</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">NavigationPage</span><span class="p">(</span><span class="n">content</span><span class="p">);</span>
+    <span class="p">}</span><span class="w">
+</span></pre></td>
+</tr></tbody></table></code></pre></figure>
+
+<p>Before you worry about all those new object types, make sure you understand how that object initializer syntax is working. We start by creating that new <code class="highlighter-rouge">ContentPage</code>, but inside of that they are setting two properties.  Notice they are separated by a comma (,).  The first is the <code class="highlighter-rouge">Title</code>.  It’s simple; just a String.</p>
+
+<p>The second property, <code class="highlighter-rouge">Content</code>, (line 7) is being set to another object also being created with the object initializer syntax.  It also has two properties: <code class="highlighter-rouge">VerticalOptions</code> (line 9) and <code class="highlighter-rouge">Children</code> (line 10).  Notice that again <code class="highlighter-rouge">Children</code> is a new object created with the object initializer syntax.  It a new <code class="highlighter-rouge">Label</code> which also has two properties: <code class="highlighter-rouge">HorizontalTextAlignment</code> and <code class="highlighter-rouge">Text</code>.</p>
+
+<h2 id="custom-page-class">Custom Page Class</h2>
+<p>As you might imagine, this is a very simple example, and real application code gets much more complex.  Instead of putting all of the page layout code into the <code class="highlighter-rouge">App.cs</code> file, it is typical to create a custom page class that extends <code class="highlighter-rouge">ContentPage</code> in a new file. The standard convention is to name the class using the name of your application + Page.  For example, for an app called “MyApp” the main page class would be called <code class="highlighter-rouge">MyAppPage</code>.</p>
+
+<p>Shown below, I’ve taken the template code from the <code class="highlighter-rouge">App</code> class constructor that creates the <em>content</em> of the page and moved it to a new class called <code class="highlighter-rouge">MyAppPage</code> which extends <code class="highlighter-rouge">ContentPage</code>.</p>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><table style="border-spacing: 0"><tbody><tr>
+<td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></td>
+<td class="code"><pre><span class="k">class</span> <span class="nc">MyAppPage</span> <span class="p">:</span> <span class="n">ContentPage</span>
+<span class="p">{</span>
+    <span class="c1">// The constructor
+</span>    <span class="k">public</span> <span class="nf">MyAppPage</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Title</span> <span class="p">=</span> <span class="s">"HelloXamarin"</span><span class="p">;</span>  <span class="c1">// Modified to end with ;
+</span>        <span class="n">Content</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StackLayout</span>
+        <span class="p">{</span>
+            <span class="n">VerticalOptions</span> <span class="p">=</span> <span class="n">LayoutOptions</span><span class="p">.</span><span class="n">Center</span><span class="p">,</span>
+            <span class="n">Children</span> <span class="p">=</span> <span class="p">{</span>
+                <span class="k">new</span> <span class="n">Label</span> <span class="p">{</span>
+                    <span class="n">HorizontalTextAlignment</span> <span class="p">=</span> <span class="n">TextAlignment</span><span class="p">.</span><span class="n">Center</span><span class="p">,</span>
+                    <span class="n">Text</span> <span class="p">=</span> <span class="s">"Welcome to Xamarin Forms!"</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">};</span> <span class="c1">// Modified to end with ;
+</span>    <span class="p">}</span>
+<span class="p">}</span><span class="w">
+</span></pre></td>
+</tr></tbody></table></code></pre></figure>
+
+<p>After creating a custom page class, we must update the <code class="highlighter-rouge">App</code> constructor code to remove all this sample page junk and just create an instance of our new class.</p>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">class</span> <span class="nc">MyAppPage</span> <span class="p">:</span> <span class="n">ContentPage</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nf">App</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// The root page of your application
+</span>        <span class="n">MainPage</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">NavigationPage</span><span class="p">(</span><span class="k">new</span> <span class="nf">AboutMePage</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Note that the result of running the application is exactly the same, but we’ve moved the code around so that it is easier to add onto and maintain.  To do this, understanding both the standard C# object syntax and the object initializer syntax used by the examples is key.</p>
+
+<p>Now we can make changes to our new App and begin customizing our own user interface.  Let’s start simple and just update the title and the text shown.</p>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><table style="border-spacing: 0"><tbody><tr>
+<td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></td>
+<td class="code"><pre><span class="k">class</span> <span class="nc">MyAppPage</span> <span class="p">:</span> <span class="n">ContentPage</span>
+<span class="p">{</span>
+    <span class="c1">// The constructor
+</span>    <span class="k">public</span> <span class="nf">MyAppPage</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Title</span> <span class="p">=</span> <span class="s">"Hello .Net Mobile!"</span><span class="p">;</span>  <span class="c1">// Modified for new title
+</span>        <span class="n">Content</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StackLayout</span>
+        <span class="p">{</span>
+            <span class="n">VerticalOptions</span> <span class="p">=</span> <span class="n">LayoutOptions</span><span class="p">.</span><span class="n">Center</span><span class="p">,</span>
+            <span class="n">Children</span> <span class="p">=</span> <span class="p">{</span>
+                <span class="k">new</span> <span class="n">Label</span> <span class="p">{</span>
+                    <span class="n">HorizontalTextAlignment</span> <span class="p">=</span> <span class="n">TextAlignment</span><span class="p">.</span><span class="n">Center</span><span class="p">,</span>
+                    <span class="n">Text</span> <span class="p">=</span> <span class="s">"Welcome to the .Net Mobile class!"</span>  <span class="c1">// Modified for new text
+</span>                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">}</span><span class="w">
+</span></pre></td>
+</tr></tbody></table></code></pre></figure>
 
 <div class="alert alert-warning" role="alert">
   <div class="media">
@@ -149,7 +309,7 @@
 
       
       <p style="margin: 0">This website is developed using the <a href="http://morea-framework.github.io/">Morea Framework</a><br>
-        Last update on: <span>2017-01-30 17:02:55 -0600</span></p>
+        Last update on: <span>2017-02-06 13:46:45 -0600</span></p>
     </div>
   </footer>
 </div>

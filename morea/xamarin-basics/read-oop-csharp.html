@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title> OO Programming in C# | CCIS2500 Spring 2017 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/spring-2017/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/spring-2017/css/style.css">
+  <link rel="stylesheet" href="/spring-2017/css/syntax.css">
+  <link rel="shortcut icon" href="/spring-2017/favicon.ico" type="image/x-icon">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+  <![endif]-->
+
+  <!-- Load Bootstrap JavaScript components -->
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-63189236-6', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+
+  <script>
+    $(window).load(function () {
+      // If on a page associated with a navbar item, make its navbar item 'active'.
+      $('.navbar-nav').find('a[href="' + location.pathname + '"]').parents('li').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+<!-- Responsive navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <!--  Display three horizontal lines when navbar collapsed. -->
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/spring-2017/index.html"> CCIS2500 Spring 2017 </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/spring-2017/modules/">Modules</a></li>
+        
+        <li><a href="/spring-2017/outcomes/">Outcomes</a></li>
+        
+        
+        <li><a href="/spring-2017/readings/">Readings</a></li>
+        
+        
+        <li><a href="/spring-2017/experiences/">Experiences</a></li>
+        
+        
+        <li><a href="/spring-2017/assessments/">Assessments</a></li>
+        
+        
+        <li><a href="/spring-2017/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="breadcrumb-bar">
+  <div class="container">
+    <ol class="breadcrumb">
+      
+      <li><a href="/spring-2017/">Home</a></li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/xamarin-basics">Xamarin.Forms App Structure</a></li>
+      <li class="active">OO Programming in C#</li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="container">
+  <h2 id="oo-programming-in-c">OO Programming in C</h2>
+<p>An overview of Object-Oriented Programming in C#.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you can make sense of Object-Oriented Programming (OOP) in C#, you’ll need to have some idea what OOP is:</p>
+
+<ul>
+  <li><a href="/spring-2017/morea/xamarin-basics/read-oop-intro">Intro to Object-oriented Programming</a></li>
+</ul>
+
+<h2 id="additional-reference">Additional Reference</h2>
+<p>More information on Object-Oriented Programming in C# can be found on the Microsoft Developer Network:</p>
+
+<ul>
+  <li><a href="https://msdn.microsoft.com/en-us/library/mt656686.aspx">Object-Oriented Programming</a></li>
+</ul>
+
+<div class="alert alert-warning" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":warning:" alt=":warning:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/26a0.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>The code we will be building for our mobile applications is object-oriented.  You’ll need to understand the basic concepts of OOP and the appropriate syntax used in C#.</p>
+
+    </div>
+  </div>
+</div>
+
+<h2 id="basic-animal-example">Basic Animal Example</h2>
+<p>Let’s create a basic Animal class.  We define a class using the keyword <code class="highlighter-rouge">class</code> and wrap the body of the class in curly braces {}.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Animal</span>
+<span class="p">{</span>
+
+<span class="p">}</span></code></pre></figure>
+
+<p>Next let’s add a property for the animal’s age.  We will use an auto-implemented property that provides a trivial get &amp; set for us.  This public value is backed by an internal private value.  With auto-implemented properties, there is always a get and set.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Animal</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>What if we don’t want to have either a get or set, or if we want to add additional code?  Then we need to write out the code ourselves.  Let’s do that for the name property, which we will only allow set in the constructor.</p>
+
+<p>First we define the property with a private (hidden) field <code class="highlighter-rouge">_name</code> and then the public accessor.  This time however we have to define the get behavior explicitly.  Note that we do not define a set.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Animal</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="c1">// Property with only get and no set
+</span>    <span class="k">private</span> <span class="n">String</span> <span class="n">_name</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">String</span> <span class="n">Name</span> <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_name</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="p">}</span></code></pre></figure>
+
+<p>Next, we’ll add the constructor which will set the name.  The constructor is similar to a method, but it <strong>MUST</strong> have the name of your class and does not return a value.  In the constructor, we set the private property for the name, <code class="highlighter-rouge">_name</code> and give the age a default value of 0.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Animal</span>
+<span class="p">{</span>
+    <span class="p">...</span> <span class="n">previous</span> <span class="n">code</span> <span class="n">hidden</span> <span class="p">...</span>
+
+    <span class="c1">// Class constructor
+</span>    <span class="k">public</span> <span class="nf">Animal</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">_name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">Age</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Finally, let’s add a method to the class so the animals can make some noise.  Because there isn’t just one way an Animal can make noise, we define this method as <code class="highlighter-rouge">virtual</code> so that the inheriting child classes can override or change its behavior.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Animal</span>
+<span class="p">{</span>
+  <span class="p">...</span> <span class="n">previous</span> <span class="n">code</span> <span class="n">hidden</span> <span class="p">...</span>
+
+    <span class="c1">// Generic behavior with virtual method
+</span>    <span class="c1">// Each child class needs to override to change behavior
+</span>    <span class="k">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">makeNoise</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"..."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The full code for the Animal class is shown below:</p>
+
+<noscript><pre>class Animal
+{
+    // Auto-Implemented property with trivial get and set
+    public int Age { get; set; }
+    
+    // Property with only get and no set outside of constructor
+    private String _name;
+    public String Name {
+        get { return _name; }
+    }
+
+    // Class constructor
+    public Animal(String name)
+    {
+        this._name = name;
+        this.Age = 0;
+    }
+
+    // Generic behavior with virtual method 
+    // Each child class needs to override to change behavior 
+    public virtual void makeNoise()
+    {
+        Console.WriteLine("...");
+    }
+}</pre></noscript>
+<script src="https://gist.github.com/mbMosman/9337264d4d2cd70c32e0e067273be393.js?file=Animal.cs"> </script>
+
+<h2 id="inheritance">Inheritance</h2>
+<p>Next let’s inherit from the Animal class to add Lions &amp; Bears.  For each child class, we will override the behavior of the makeNoise method to be appropriate for each specific Animal.</p>
+
+<p>First let’s create the Lion class, extending (or inheriting from) our Animal class. To do this, after the name of our new class we use a colon followed by the name of the class we want to extend.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Lion</span> <span class="p">:</span> <span class="n">Animal</span>
+<span class="p">{</span>
+
+<span class="p">}</span></code></pre></figure>
+
+<p>Because we added a constructor that takes an argument, the name, we need to ensure a value is passed into the Animal part of our constructor for the Lion class.  There is no need to <em>do</em> anything inside the constructor, so we just include the empty curly braces { }. Our parent Animal class is handling all of our properties for us in this example.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Lion</span> <span class="p">:</span> <span class="n">Animal</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nf">Lion</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">):</span><span class="k">base</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Finally, we need to override our makeNoise method so that our lions can roar.  Note that we use the <code class="highlighter-rouge">override</code> keyword to indicate that we are changing the behavior from the parent class.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Lion</span> <span class="p">:</span> <span class="n">Animal</span>
+<span class="p">{</span>
+    <span class="p">...</span> <span class="n">previous</span> <span class="n">code</span> <span class="n">hidden</span> <span class="p">...</span>
+
+    <span class="c1">// Here we override the base class method to
+</span>    <span class="c1">// make our lion's roar.
+</span>    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">makeNoise</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Roar!"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The full code for the Lion class is shown below:</p>
+
+<noscript><pre>class Lion : Animal
+{
+
+    public Lion(String name):base(name) { }
+
+    // Here we override the base class method to 
+    // make our lion's roar.
+    public override void makeNoise()
+    {
+        Console.WriteLine("Roar!");
+    }
+}</pre></noscript>
+<script src="https://gist.github.com/mbMosman/9337264d4d2cd70c32e0e067273be393.js?file=Lion.cs"> </script>
+
+<p>The bear class is similar, but we have the bears say grrr:</p>
+
+<noscript><pre>class Bear : Animal
+{
+    public Bear(String name):base(name) { }
+
+    // Here we override the base class method to 
+    // make our bear's grrr...
+    public override void makeNoise()
+    {
+        Console.WriteLine("Grrr!");
+    }
+}</pre></noscript>
+<script src="https://gist.github.com/mbMosman/9337264d4d2cd70c32e0e067273be393.js?file=Bear.cs"> </script>
+
+<h2 id="making-and-using-objects">Making and Using Objects</h2>
+<p>Now that we have these classes, how can we use them?  Let’s create a Lion called Simba.</p>
+
+<p>To create an <em>instance</em> of our class, we use the keyword <code class="highlighter-rouge">new</code> with the constructor.<br>
+Here we must give the name as an argument to the constructor.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp">    <span class="c1">// Make a new lion
+</span>    <span class="n">Lion</span> <span class="n">lion</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Lion</span><span class="p">(</span><span class="s">"Simba"</span><span class="p">);</span></code></pre></figure>
+
+<p>We can get and set the lion’s age by using the accessors.  We use object notation syntax to do this, the variable reference, followed by a <code class="highlighter-rouge">.</code>, followed by the property accessor name.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp">    <span class="c1">// Set and get auto-implemented age
+</span>    <span class="n">lion</span><span class="p">.</span><span class="n">Age</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Simba is "</span> <span class="p">+</span> <span class="n">lion</span><span class="p">.</span><span class="n">Age</span> <span class="p">+</span> <span class="s">" years old."</span><span class="p">);</span></code></pre></figure>
+
+<p>What about the lion’s name?  We can see it:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp">    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The lion's name is "</span> <span class="p">+</span> <span class="n">lion</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span></code></pre></figure>
+
+<p>However we cannot set it.  This will give an error:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp">    <span class="n">lion</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">"Can't do this"</span><span class="p">;</span></code></pre></figure>
+
+<p>Once we have created an instance of a class, we can call methods on that instance.  To do this, we use object notation syntax, just like for setting a property, but with the method name.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp">    <span class="n">lion</span><span class="p">.</span><span class="nf">makeNoise</span><span class="p">();</span></code></pre></figure>
+
+<h3 id="object-initializer-syntax">Object Initializer Syntax</h3>
+<p>There is another way that we can create an object and set properties (that are not arguments for the constructor) at the same time.  This is called <em>Object Initializer</em> syntax.</p>
+
+<p>Create a new Bear named Baloo and set his age to 12.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp">    <span class="n">Bear</span> <span class="n">bear</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Bear</span><span class="p">(</span><span class="s">"Baloo"</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Age</span> <span class="p">=</span> <span class="m">12</span>
+    <span class="p">};</span></code></pre></figure>
+
+<h3 id="polymorphism">Polymorphism</h3>
+<p>When an object can behave in different ways or <em>show different forms</em>, this is called Polymorphism.  It is a fundamental part of object-oriented programming.  To illustrate this, we can make an array that holds references to Animal objects.</p>
+
+<p>Remember that a Lion IS-A Animal and that a Bear IS-A Animal because they inherit from the Animal class.  Because of this, we can put our lion and bear into the Animal array.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp">    <span class="n">Animal</span><span class="p">[]</span> <span class="n">animals</span> <span class="p">=</span> <span class="p">{</span> <span class="n">lion</span><span class="p">,</span> <span class="n">bear</span> <span class="p">};</span></code></pre></figure>
+
+<p>When we do this, it’s no longer clear what the exact type of the items in the array are, only that they follow the rule IS-A Animal.</p>
+
+<p>Now, let’s use a loop to go through the array and call the makeNoise method.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp">    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Let's see all the animals make noise!"</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Can you guess what animal they are?"</span><span class="p">);</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="n">Animal</span> <span class="n">a</span> <span class="k">in</span> <span class="n">animals</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Meet "</span> <span class="p">+</span> <span class="n">a</span><span class="p">.</span><span class="n">Name</span> <span class="p">+</span> <span class="s">"."</span><span class="p">);</span>
+        <span class="n">a</span><span class="p">.</span><span class="nf">makeNoise</span><span class="p">();</span>
+    <span class="p">}</span></code></pre></figure>
+
+<p>When the code runs, as you might expect our lion roars and the bear grrrs.  While this might be what you would expect, it is actually some rather nifty OOP <em>polymorphism</em> magic that you should not take for granted.</p>
+
+<p>The full Program.cs code is shown below:</p>
+<noscript><pre>class Bear : Animal
+{
+    public Bear(String name):base(name) { }
+
+    // Here we override the base class method to 
+    // make our bear's grrr...
+    public override void makeNoise()
+    {
+        Console.WriteLine("Grrr!");
+    }
+}</pre></noscript>
+<script src="https://gist.github.com/mbMosman/9337264d4d2cd70c32e0e067273be393.js?file=Bear.cs"> </script>
+
+
+</div>
+
+
+
+
+<script src="/spring-2017/js/scrollIfAnchor.js"></script>
+
+<div class="footer-background hidden-print">
+  <footer>
+    <div class="container page-footer">
+      
+      <p>This course was developed for <a href="https://www.hennepintech.edu/">Hennepin Technical College</a> by <a href="https://www.linkedin.com/in/mary-mosman-43523976">Mary Mosman</a>.</p>
+
+<p>This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License" style="vertical-align: top;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+
+      
+      <p style="margin: 0">This website is developed using the <a href="http://morea-framework.github.io/">Morea Framework</a><br>
+        Last update on: <span>2017-02-06 13:46:45 -0600</span></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

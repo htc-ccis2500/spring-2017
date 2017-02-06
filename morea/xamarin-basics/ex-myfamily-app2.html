@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Family App | CCIS2500 Spring 2017 </title>
+  <title> Family App - Part 2 | CCIS2500 Spring 2017 </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 
@@ -96,35 +96,46 @@
       
       <li><a href="/spring-2017/">Home</a></li>
       <li><a href="/spring-2017/modules">Modules</a></li>
-      <li><a href="/spring-2017/modules/"></a></li>
-      <li class="active">Family App</li>
+      <li><a href="/spring-2017/modules/xamarin-basics">Xamarin.Forms App Structure</a></li>
+      <li class="active">Family App - Part 2</li>
     </ol>
   </div>
 </div>
 
 
 <div class="container">
-  <h1 id="family-app">Family App</h1>
+  <h1 id="family-app---part-2">Family App - Part 2</h1>
 <p>Create a simple Xamarin.Forms application to introduce your family.</p>
 
-<h2 id="the-family-app">The Family App</h2>
-<p>Create a new Xamarin.Forms application called FamilyApp, and add it to GitHub.  You may push the initial template to the master branch, but remember to setup a development/feature branch for your work.</p>
+<h2 id="the-family-app---part-2">The Family App - Part 2</h2>
+<p>Add your Xamarin.Forms FamilyApp to GitHub.  You may push the initial work from last week to the master branch to begin with, but remember to setup a development/feature branch for your new work for this week.</p>
 
 <h2 id="custom-main-page">Custom Main Page</h2>
-<p>Add a new <code class="highlighter-rouge">ContentPage</code> class called <code class="highlighter-rouge">FamilyAppPage</code> to the application.  Add text to the page that introduces various members of your family.  A sentence or two for each person is fine.  You should add at least 5 people, but can add more if you like. Add multiple paragraphs, one for each member of the family.</p>
+<p>You should already have a new <code class="highlighter-rouge">ContentPage</code> class in your application.  It should already add text to the page that introduces various members of your family.  A sentence or two for each person is fine.  You will have multiple paragraphs, one for each member of the family.</p>
+
+<p>Make sure that you have added at least 5 people.  But feel free to add more if you like.</p>
 
 <h3 id="style-the-text">Style the Text</h3>
 <p>No more black and white here.  Add some custom styling to make your family stand out.  For this application you must:</p>
 
 <ul>
-  <li>Use bold text and increase the font size of each family member’s name</li>
-  <li>Set a different background color for the page</li>
+  <li>Use bold text and increase the font size of each family member’s name (Done last week!)</li>
+  <li>Set a different background color for the page (Done last week!)</li>
   <li>Use a different font color for each family member</li>
   <li>Use a StackLayout with a Label for each member of the family</li>
+  <li>Use a ScrollView so that any overflow content is visible by scrolling</li>
+  <li>Use a layout option to expand at least one (but not all) family members, so that it will expand to fill any left over space.</li>
 </ul>
 
 <h2 id="test">Test</h2>
-<p>Test your application using the Android &amp; Windows phone emulators (optionally iOS).  Make sure that your font choices are all readable, and that the application meets the requirements shown above.  Take a screenshot of your successful test on each platform to place in the assignment submission box.</p>
+<p>Test your application using the Android &amp; Windows phone emulators (optionally iOS).  Make sure that your font choices are all readable, and that the application meets the requirements shown above.  Make sure you test that the scrolling is functional by adjusting your content quantity, size or emulator device size.</p>
+
+<ul>
+  <li>Ensure that one screenshot illustrates the scrolling functionality was needed and tested successfully.</li>
+  <li>Ensure that another screenshot does not require scrolling and shows the expand behavior.</li>
+</ul>
+
+<p>Take a screenshot of your successful test on each platform to place in the assignment submission box.</p>
 
 <h2 id="submit">Submit</h2>
 <p>Commit your changes to your development/feature branch and push to GitHub. Open a pull-request for the work. <strong>Do NOT commit or merge to master.</strong></p>
@@ -135,6 +146,7 @@
   <li>Your Family app running on Android</li>
   <li>Your Family app running on Windows Phone</li>
   <li>Your Family app running on Windows and/or iOS (optional)</li>
+  <li>One or more additional screenshots to show the scroll &amp; expand behavior</li>
   <li>A GitHub website screenshot clearly showing your GitHub username, repository and open pull-request</li>
 </ol>
 

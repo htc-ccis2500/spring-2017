@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title> Text Formatting | CCIS2500 Spring 2017 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/spring-2017/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/spring-2017/css/style.css">
+  <link rel="stylesheet" href="/spring-2017/css/syntax.css">
+  <link rel="shortcut icon" href="/spring-2017/favicon.ico" type="image/x-icon">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+  <![endif]-->
+
+  <!-- Load Bootstrap JavaScript components -->
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-63189236-6', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+
+  <script>
+    $(window).load(function () {
+      // If on a page associated with a navbar item, make its navbar item 'active'.
+      $('.navbar-nav').find('a[href="' + location.pathname + '"]').parents('li').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+<!-- Responsive navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <!--  Display three horizontal lines when navbar collapsed. -->
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/spring-2017/index.html"> CCIS2500 Spring 2017 </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/spring-2017/modules/">Modules</a></li>
+        
+        <li><a href="/spring-2017/outcomes/">Outcomes</a></li>
+        
+        
+        <li><a href="/spring-2017/readings/">Readings</a></li>
+        
+        
+        <li><a href="/spring-2017/experiences/">Experiences</a></li>
+        
+        
+        <li><a href="/spring-2017/assessments/">Assessments</a></li>
+        
+        
+        <li><a href="/spring-2017/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="breadcrumb-bar">
+  <div class="container">
+    <ol class="breadcrumb">
+      
+      <li><a href="/spring-2017/">Home</a></li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/xamarin-basics">Xamarin.Forms App Structure</a></li>
+      <li class="active">Text Formatting</li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="container">
+  <h2 id="text-formatting">Text Formatting</h2>
+<p>Basic information on styling text in a Xamarin.Forms application.</p>
+
+<h2 id="reference-text">Reference Text</h2>
+<p>Chapters 3 &amp; 5 of <a href="https://developer.xamarin.com/guides/xamarin-forms/creating-mobile-apps-xamarin-forms/">Creating Mobile Apps with Xamarin.Forms</a> by Charles Petzold.</p>
+
+<h2 id="text-formatting-1">Text Formatting</h2>
+<p>Text is often a large part of what applications (particularly business applications) show.  Boring as it is, we should spend some time looking at how to structure it and alter its presentation and layout.</p>
+
+<p>A <code class="highlighter-rouge">Label</code> can hold long strings of text, which can look like a paragraph.  If we add newline characters <code class="highlighter-rouge">\n</code> to the string, it can become more than one paragraph.  Of course it would be better to use the <code class="highlighter-rouge">Environment.NewLine</code> property to avoid any platform specific differences in the newline character.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp">  <span class="k">new</span> <span class="n">Label</span> <span class="p">{</span>
+      <span class="n">Text</span> <span class="p">=</span> <span class="s">"Welcome to the .Net Mobile class!"</span> <span class="p">+</span>
+          <span class="n">Environment</span><span class="p">.</span><span class="n">NewLine</span> <span class="p">+</span> <span class="n">Environment</span><span class="p">.</span><span class="n">NewLine</span> <span class="p">+</span>
+          <span class="s">"More text on a newline!!!"</span>
+  <span class="p">}</span></code></pre></figure>
+
+<p>We can also set properties to alter the positioning of our text.  We saw the <code class="highlighter-rouge">HorizontalTextAlignment</code> set on the <code class="highlighter-rouge">Label</code> in the template code. There is also <code class="highlighter-rouge">VerticalTextAlignment</code>.  The possible values for these are: <code class="highlighter-rouge">TextAlignment.Start</code>,  <code class="highlighter-rouge">TextAlignment.Center</code> and <code class="highlighter-rouge">TextAlignment.End</code>.  Experiment with these to see how the display is changed.</p>
+
+<p>Notice that the template code also set the <code class="highlighter-rouge">VerticalOptions</code> on the <code class="highlighter-rouge">Layout</code> class. There are also <code class="highlighter-rouge">HorizontalOptions</code> and they have similar possible values as the <code class="highlighter-rouge">TextAlignment</code> above: <code class="highlighter-rouge">LayoutOptions.Start</code>, <code class="highlighter-rouge">LayoutOptions.Center</code>, and <code class="highlighter-rouge">LayoutOptions.End</code>. Again experiment with these, setting them and removing them, to see how the display is altered. Note that once you have set the <code class="highlighter-rouge">VerticalOptions</code>, setting the <code class="highlighter-rouge">VerticalTextAlignment</code> option has no affect.</p>
+
+<h2 id="colors">Colors</h2>
+<p>There are also display properties for setting colors, both on the text and the background on a <code class="highlighter-rouge">Label</code>. To set the text color, use the <code class="highlighter-rouge">TextColor</code> property.  To set the background color, set the <code class="highlighter-rouge">BackgroundColor</code>. The text color can only be set on a <code class="highlighter-rouge">Label</code>, but the <code class="highlighter-rouge">BackgroundColor</code> can be applied to <code class="highlighter-rouge">Label</code>, <code class="highlighter-rouge">Layout</code>, and <code class="highlighter-rouge">Page</code> objects.</p>
+
+<p>By default these color properties are set to <code class="highlighter-rouge">Color.Default</code> which represents a color appropriate for your platform.  This means that it will be different on iOS, Android, and Windows Phone.  You’ve probably already noticed that your application displays differently in each of the emulators.  These <em>default</em> colors can be modified for your application on Android and Windows phone.  (See Changing the application color scheme, in the reference text.)</p>
+
+<p>There are 17 public static read-only color options, but custom colors can also be created.  The color can be set in three different ways, as shown by the constructors and static creation methods on the <code class="highlighter-rouge">Color</code> class: using RGB, using RGBA, and using HSLA.  See the documentation for details: <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Color/">Color class</a>.</p>
+
+<div class="alert alert-danger" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":exclamation:" alt=":exclamation:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2757.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>The static methods divide your input by 255, which will likely not give you what you want.  Pass in decimal values to these methods instead.</p>
+
+    </div>
+  </div>
+</div>
+
+<h2 id="font-size-and-style">Font Size and Style</h2>
+<p>There are also <code class="highlighter-rouge">Label</code> properties that can be used for changing the display of the text.  You can change the font used with the <code class="highlighter-rouge">FontFamily</code> property. You can set this to a font name, but the font must be supported by your platform.  To use this appropriately, you’ll likely use it with <code class="highlighter-rouge">Device.OnPlatform</code> and you’ll need to know the supported fonts for the targeted system.</p>
+
+<p>The size can be set using <code class="highlighter-rouge">FontSize</code>, which can think of as using generic <em>units</em>. (A <em>lot</em> more information on sizing is provide in Chapter 5 of the reference text.)  For now, there are some <code class="highlighter-rouge">NamedSizes</code> that you can use easily: <code class="highlighter-rouge">Default</code>, <code class="highlighter-rouge">Micro</code>, <code class="highlighter-rouge">Small</code>, <code class="highlighter-rouge">Medium</code>, and <code class="highlighter-rouge">Large</code>.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp">  <span class="k">new</span> <span class="n">Label</span> <span class="p">{</span>
+      <span class="n">Text</span> <span class="p">=</span> <span class="s">"Welcome to the .Net Mobile class!"</span><span class="p">,</span>
+      <span class="n">FontSize</span> <span class="p">=</span> <span class="n">Device</span><span class="p">.</span><span class="nf">GetNamedSize</span><span class="p">(</span><span class="n">NamedSize</span><span class="p">.</span><span class="n">Medium</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Label</span><span class="p">))</span>
+  <span class="p">}</span></code></pre></figure>
+
+<p>There are also <code class="highlighter-rouge">FontAttributes</code> to set the font to <code class="highlighter-rouge">Bold</code> or <code class="highlighter-rouge">Italic</code>.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp">  <span class="k">new</span> <span class="n">Label</span> <span class="p">{</span>
+      <span class="n">Text</span> <span class="p">=</span> <span class="s">"Welcome to the .Net Mobile class!"</span><span class="p">,</span>
+      <span class="n">FontAttributes</span> <span class="p">=</span> <span class="n">FontAttributes</span><span class="p">.</span><span class="n">Bold</span>
+  <span class="p">}</span></code></pre></figure>
+
+<h2 id="mixing-and-matching">Mixing and Matching</h2>
+<p>So far we’ve been setting properties on the text for the entire <code class="highlighter-rouge">Label</code>, but we can use <code class="highlighter-rouge">FormattedText</code> property and the <code class="highlighter-rouge">FormattedString</code> class to mix the styling on text within a <code class="highlighter-rouge">Label</code>.  The <code class="highlighter-rouge">FormattedString</code> class structures the text into a series of <code class="highlighter-rouge">Span</code> objects which may each have different properties applied.  See (FormattedText section in the reference text for more information and an example.)</p>
+
+</div>
+
+
+
+
+<script src="/spring-2017/js/scrollIfAnchor.js"></script>
+
+<div class="footer-background hidden-print">
+  <footer>
+    <div class="container page-footer">
+      
+      <p>This course was developed for <a href="https://www.hennepintech.edu/">Hennepin Technical College</a> by <a href="https://www.linkedin.com/in/mary-mosman-43523976">Mary Mosman</a>.</p>
+
+<p>This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License" style="vertical-align: top;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+
+      
+      <p style="margin: 0">This website is developed using the <a href="http://morea-framework.github.io/">Morea Framework</a><br>
+        Last update on: <span>2017-02-06 13:46:45 -0600</span></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

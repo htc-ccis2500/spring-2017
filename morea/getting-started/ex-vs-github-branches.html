@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title> Git and Branches | CCIS2500 Spring 2017 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/spring-2017/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/spring-2017/css/style.css">
+  <link rel="stylesheet" href="/spring-2017/css/syntax.css">
+  <link rel="shortcut icon" href="/spring-2017/favicon.ico" type="image/x-icon">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+  <![endif]-->
+
+  <!-- Load Bootstrap JavaScript components -->
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-63189236-6', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+
+  <script>
+    $(window).load(function () {
+      // If on a page associated with a navbar item, make its navbar item 'active'.
+      $('.navbar-nav').find('a[href="' + location.pathname + '"]').parents('li').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+<!-- Responsive navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <!--  Display three horizontal lines when navbar collapsed. -->
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/spring-2017/index.html"> CCIS2500 Spring 2017 </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/spring-2017/modules/">Modules</a></li>
+        
+        <li><a href="/spring-2017/outcomes/">Outcomes</a></li>
+        
+        
+        <li><a href="/spring-2017/readings/">Readings</a></li>
+        
+        
+        <li><a href="/spring-2017/experiences/">Experiences</a></li>
+        
+        
+        <li><a href="/spring-2017/assessments/">Assessments</a></li>
+        
+        
+        <li><a href="/spring-2017/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="breadcrumb-bar">
+  <div class="container">
+    <ol class="breadcrumb">
+      
+      <li><a href="/spring-2017/">Home</a></li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/getting-started">Getting Started</a></li>
+      <li class="active">Git and Branches</li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="git-and-branches">Git and Branches</h1>
+<p>Learn to work with Git and branches using Visual Studio.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<p>If you have not already done so, the first steps are to install git and add a project to source control.</p>
+
+<ul>
+  <li><a href="/spring-2017/morea/getting-started/ex-install-git.html">Install Git</a></li>
+  <li><a href="/spring-2017/morea/xamarin-basics/ex-vs-github-add">Adding a Project to GitHub</a></li>
+</ul>
+
+<p>This exercise will assume that you have installed the Visual Studio plugin for GitHub.  If you do not wish to do that, you will need to use git commands to create and manage your branches and version your work.</p>
+
+<p>Additional Reference:</p>
+
+<ul>
+  <li><a href="https://visualstudio.github.com/index.html">GitHub Extension for Visual Studio</a></li>
+  <li>Microsoft Visual Studio: <a href="https://www.visualstudio.com/en-us/docs/git/tutorial/gitworkflow">Learn about version control and Git</a>
+</li>
+</ul>
+
+<h2 id="intro-to-branches">Intro to Branches</h2>
+<p>One of the main benefits of using a version control tool like git is that it allows you to keep a history of changes to your project.  That allows you some measure of safety, so that if you need to go back to see what your project looked like in the past, you can easily do that. This also allow you to access the code from that point in time as well, which is helpful if you need to say fix a bug in an older release.</p>
+
+<p>Another benefit is that you can share your code to allow multiple people to work on things at the same time. This is particularly helpful on large projects where one person cannot handle on the work on the time schedule needed.  It can also allow one person to begin work on the next release while another is maintaining the old and fixing bugs.</p>
+
+<p>With only one active line of changes though, this could become confusing and difficult to manage very quickly.  To facilitate this type of work, it’s important to be able to maintain many active lines of work within a single project. This keeps one developers work isolated from the work of others until the changes are complete, tested and ready to be shared. This also allows us to fix bugs for the released code without contaminating it with any new, unreleased features. These lines of work are called <strong>branches</strong>, and learning to work with them is important to understand how git is used on the job.</p>
+
+<h3 id="master">Master</h3>
+<p>The master branch is the default main branch in a git repository.  Generally this branch is reserved for the released version of a project - code that has been integrated, well tested and is publicly consumed.  Developers do not commit changes to this on a day to day basis, as we are known to break things.  Changes to this branch often involve a good deal of coordination and specialized testing first.</p>
+
+<p>You’ll notice that when we initially added our project to GitHub in the last exercise, that it was added to the master branch.  The branch is shown in the status bar at the bottom-right of Visual Studio.</p>
+
+<p>For the purposes of this course, the code on your master branch will be the work that has been reviewed (graded) and had any necessary changes or corrections made to it.</p>
+
+<h3 id="devfeature-branches">Dev/Feature Branches</h3>
+<p>It is common to need to isolate maintenance work or new feature development from both the released code on the master branch and the work being done for other reasons.  Sometimes this is work that you are doing yourself and need to keep separate, but other times it will be work that is done by others.  It isn’t important <em>who</em> is doing the work, only that the work should be kept separate.</p>
+
+<p>Even on a new development project that does not <em>have</em> released code, work is never started on the main branch as you never know what code it might be that is initially released.  Perhaps that high-priority feature, becomes a low priority the next week and it needs to be shelved for a time.  By having that work on a dev/feature branch, that becomes a trivial task.</p>
+
+<p>For the purposes of this course, you should create a new branch for each individual assignment’s work so that we isolate our new and unstable code from our completed, tested, and already-graded code. When first starting a new project, it is important to create a branch first as it facilitates the pull-request process that will be used for grading feedback.</p>
+
+<h2 id="create-a-devfeature-branch">Create a Dev/Feature Branch</h2>
+<p>Open up the project you added to GitHub in the previous exercise in Visual Studio.</p>
+
+<p>The current branch is shown at the bottom-right in the status bar.  This should currently say “master”.  Click on this to bring up the pop-up menu and select “New Branch…” option.  This opens the Branches view in Team Explorer.</p>
+
+<p>Enter the branch name, something to indicate the assignment name perhaps, and select master as the starting point.  Make sure that the box is checked to “Checkout branch” and then click “Create Branch”.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-new-branch.png" alt="Visual Studio Team Explorer, creating a new branch.">
+    </div>
+  </div>
+</div>
+
+<p>You should see that you now have two branches shown in the Branches view and that the name of the branch shown in the status bar has changed from master to your new branch.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-branches.png" alt="Team Explorer, branches view with new branch.">
+    </div>
+  </div>
+</div>
+
+<p>You’re now ready to make changes to your project code and add, commit and push those changes on your development branch.</p>
+
+<h2 id="working-with-the-branch">Working with the branch</h2>
+<p>To illustrate the process of making changes, let’s add a Readme file to your project repository.</p>
+
+<p>In Visual Studio, Add a new text file using the File menu.  Then use File, Save As to save that file as “Readme.md” in your solution directory.  Make sure the file is saved with a .md extension. This is a <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a> file.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-save-readme.png" alt="Saving the readme.md file to the solution directory.">
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-info" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":notebook:" alt=":notebook:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4d3.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>It is important that you are creating solution directories for the projects you create for this course.</p>
+
+    </div>
+  </div>
+</div>
+
+<p>Add some text to the file. This file is shown on GitHub to those browsing through your repositories.  It’s helpful to include the name of your project and a short description. A heading begins with <code class="highlighter-rouge"># </code> but basic text can just be typed in.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-edit-readme.png" alt="Sample readme file text.">
+    </div>
+  </div>
+</div>
+
+<p>Make sure you have saved the file, then notice that you have a change showing in the git status information in the status bar in the bottom-right of Visual Studio.  Make sure the correct branch is showing - your new development branch NOT master.  Then, click the pencil icon to stage and commit that change.</p>
+
+<div class="alert alert-danger" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":exclamation:" alt=":exclamation:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2757.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>It is important to verify your branch before committing the change. While it is not impossible to move changes put on the wrong branch, this would be a bad faux pax on the job.</p>
+
+    </div>
+  </div>
+</div>
+
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-commit-readme.png" alt="Team Explorer - Changes view showing add of readme file.">
+    </div>
+  </div>
+</div>
+
+<p>Next we want to push that work out to our remote GitHub repository.  Notice there is an unpublished commit showing in the status bar.  Click the up-arrow icon to bring up the Team Explorer Synchronization view.</p>
+
+<p>When the branch is new, you’ll notice a message that indicates there is no remote branch being tracked.  That’s fine, because we’re about to create it.  Click “Publish”.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-publish-devbranch.png" alt="Team Explorer - Publish the development branch.">
+    </div>
+  </div>
+</div>
+
+<p>Now let’s take a look at the GitHub website and see what happened.  Notice that the master branch is unchanged, but a new branch was recently updated.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-github-updated-web.png" alt="GitHub website showing new branch recently pushed.">
+    </div>
+  </div>
+</div>
+
+<p>Notice that there is a Branch dropdown just above where it shows your file list.  This tells you what branch is being displayed.  Click the dropdown and select your new development branch.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-github-updated-branch-web.png" alt="GitHub website showing changes on new develpment branch.">
+    </div>
+  </div>
+</div>
+
+<h2 id="pull-request">Pull-request</h2>
+<p>When your work on a branch is ready to be combined with other work (or in the case of this class is ready for grading), you’ll create a pull-request.  This shows the changes between the branches and allows for review and feedback on the work before the changes are merged to another branch.</p>
+
+<p>Let’s create a pull-request to add the readme.md file to the master branch.  While looking at the files on the new development branch on the GitHub website, click the New Pull-request button.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-github-new-pullrequest-web.png" alt="GitHub website showing new pull-request button.">
+    </div>
+  </div>
+</div>
+
+<p>The next page will show a dialog at the top that titles the pull-request (by default it uses your last commit comment) and below will show all the files/changes that will be part of this request.  It is important that you scroll-down and review the files/changes to make sure you are creating the pull-request correctly.  You should see the files that you recently worked on.  Also notice at the top that base should say “master” and compare should show your dev/feature branch name.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-github-open-pullrequest-web.png" alt="GitHub website review before opening pull-request.">
+    </div>
+  </div>
+</div>
+
+<p>Once you have confirmed that the base is your master branch and you have reviewed the changes to be included below, click the green “Create pull request” button.  You’ll now see that the pull-request is open.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-github-opened-pullrequest-web.png" alt="GitHub website review showing open pull-request.">
+    </div>
+  </div>
+</div>
+
+<p>A screenshot of the open pull request, as shown above MUST be placed in the assignment dropbox for grading.  This tells me several important things that I would not otherwise know:</p>
+
+<ol>
+  <li>Your GitHub user name.</li>
+  <li>What repository your work is in.</li>
+  <li>What branch and pull-request I should be looking at for this assignment.</li>
+</ol>
+
+<div class="alert alert-danger" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":exclamation:" alt=":exclamation:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2757.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>No screenshot will mean no grade for the work.</p>
+
+    </div>
+  </div>
+</div>
+
+<h2 id="review-feedback">Review Feedback</h2>
+<p>Once I have reviewed your work, you’ll probably see comments in your email.  Depending on the comments, those are generally easier to review and understand if you are looking at the pull-request on GitHub.  If you switch to the Files Changed tab view, you can see a listing of all the files included, the contents of those files, and any comments made in the context of the file and code that the comment pertains to.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-github-pullrequest-feedback-web.png" alt="GitHub website review showing open pull-request feedback.">
+    </div>
+  </div>
+</div>
+
+<p>Once you have gotten my feedback on your work, you may want to make updates to your code to make any fixes or  suggestions indicated in that feedback.  You should make those changes and push them to GitHub before going on to merge the code as shown below.  In an on the job situation, those changes would likely require another review before merging, but we’ll skip that for this class.</p>
+
+<h2 id="merge-changes">Merge Changes</h2>
+<p>The last step is to move your changes from your development branch to the master branch.  Remember that this is done after the work is graded.</p>
+
+<p>Go back to your pull-request on the GitHub website.  There should be a lovely green-button to “Merge pull request”.  For <em>other</em> assignments, <strong>DO NOT DO THIS UNTIL THE WORK HAS BEEN GRADED.</strong>  (It’s ok to do it now while doing this assignment.)</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-github-merge-pullrequest-web.png" alt="GitHub website showing merge pull-request button.">
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-info" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":notebook:" alt=":notebook:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4d3.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>If you do not see this green button, you’ve got changes mixed on both branches and will need to do a manual merge.  I recommend that you contact me for help with this unless you have done it before or feel <em>very</em> confident in your git skills. This should not happen if you are careful about where you commit your changes.</p>
+
+    </div>
+  </div>
+</div>
+
+<p>You’ll notice all that green becomes purple and the pull-request is not merged.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-github-merged-pullrequest-web.png" alt="GitHub website showing merged pull-request.">
+    </div>
+  </div>
+</div>
+
+<p>Click the Code tab view to see the list of all your repository files on the selected branch and you’ll now see that the master branch includes the Readme.md file.  The comment should also show that the last commit was from the merge of your pull-request.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-github-after-merge.png" alt="GitHub website showing code after merge.">
+    </div>
+  </div>
+</div>
+
+<p><strong>Take a screenshot of that page on GitHub to put in the assignment box to show you have completed this work.</strong> Note that this screenshot should show your repository not mine.</p>
+
+<p>In a situation where the changes would really be merged to the release branch, you would most likely not be doing this merge automatically through GitHub.  The changes would first be merged into a staging branch where they could be thoroughly QA tested and validated before becoming the official released code.</p>
+
+<h2 id="pulling-remote-changes">Pulling Remote Changes</h2>
+<p>One last thing you should know about working with git.  We’ve now made updates to our master branch outside of Visual Studio.  This was done when we merged the changes from the dev/feature branch to master on the website.  However, you might also get into this situation with other branches if you are pushing work to GitHub from more than one computer.</p>
+
+<p>To get remote changes back into our local repository, we need to pull them in.</p>
+
+<p>In Visual Studio, go to the Team Explorer and open the Synchronization view.  Check that the dev/feature branch is still active as shown in the status bar at the bottom of Visual Studio, and switch if needed.  In the Sync view you’ll notice a section that says incomming commits.  <strong>Click Fetch</strong>  and you’ll notice there are still “no incomming commits.”</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-sync-in-devbranch.png" alt="Visual Studio Team Explorer Sync view incoming commits on dev/feature branch.">
+    </div>
+  </div>
+</div>
+
+<p>However if you switch the branch to master in the status bar, that will change.  Now you should see that there are incomming commits from your merge.  <strong>Click Pull</strong>  to integrate those changes into your local repository.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-sync-in-master.png" alt="Visual Studio Team Explorer Sync view incoming commits on master branch.">
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+<script src="/spring-2017/js/scrollIfAnchor.js"></script>
+
+<div class="footer-background hidden-print">
+  <footer>
+    <div class="container page-footer">
+      
+      <p>This course was developed for <a href="https://www.hennepintech.edu/">Hennepin Technical College</a> by <a href="https://www.linkedin.com/in/mary-mosman-43523976">Mary Mosman</a>.</p>
+
+<p>This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License" style="vertical-align: top;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+
+      
+      <p style="margin: 0">This website is developed using the <a href="http://morea-framework.github.io/">Morea Framework</a><br>
+        Last update on: <span>2017-02-06 13:46:45 -0600</span></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

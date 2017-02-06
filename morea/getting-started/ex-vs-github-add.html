@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title> Adding a project to GitHub | CCIS2500 Spring 2017 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/spring-2017/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/spring-2017/css/style.css">
+  <link rel="stylesheet" href="/spring-2017/css/syntax.css">
+  <link rel="shortcut icon" href="/spring-2017/favicon.ico" type="image/x-icon">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+  <![endif]-->
+
+  <!-- Load Bootstrap JavaScript components -->
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-63189236-6', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+
+  <script>
+    $(window).load(function () {
+      // If on a page associated with a navbar item, make its navbar item 'active'.
+      $('.navbar-nav').find('a[href="' + location.pathname + '"]').parents('li').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+<!-- Responsive navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <!--  Display three horizontal lines when navbar collapsed. -->
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/spring-2017/index.html"> CCIS2500 Spring 2017 </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/spring-2017/modules/">Modules</a></li>
+        
+        <li><a href="/spring-2017/outcomes/">Outcomes</a></li>
+        
+        
+        <li><a href="/spring-2017/readings/">Readings</a></li>
+        
+        
+        <li><a href="/spring-2017/experiences/">Experiences</a></li>
+        
+        
+        <li><a href="/spring-2017/assessments/">Assessments</a></li>
+        
+        
+        <li><a href="/spring-2017/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="breadcrumb-bar">
+  <div class="container">
+    <ol class="breadcrumb">
+      
+      <li><a href="/spring-2017/">Home</a></li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/getting-started">Getting Started</a></li>
+      <li class="active">Adding a project to GitHub</li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="adding-a-project-to-github">Adding a project to GitHub</h1>
+<p>Learn to work with Git and GitHub through Visual Studio by adding a new project to GitHub.</p>
+
+<h2 id="install">Install</h2>
+<p>If you have not already done so, the first steps are to install git and optionally the Visual Studio plugin.</p>
+
+<ul>
+  <li><a href="/spring-2017/morea/getting-started/ex-install-git.html">Install Git</a></li>
+</ul>
+
+<p>This exercise will assume that you have installed the plugin.  If you do not wish to do that, you may still version your projects manually using the GitHub website and the installed gitcmd or gitbash shell from the git Windows install. You will need to use git commands to create your repository, link it to GitHub, then add, commit, and push files as needed.</p>
+
+<p>Additional Reference:</p>
+
+<ul>
+  <li><a href="https://visualstudio.github.com/index.html">GitHub Extension for Visual Studio</a></li>
+  <li>Microsoft Visual Studio: <a href="https://www.visualstudio.com/en-us/docs/git/tutorial/gitworkflow">Learn about version control and Git</a>
+</li>
+</ul>
+
+<h2 id="connect-and-sign-out">Connect and Sign-out</h2>
+<p>In Visual Studio, go to the Team menu and select “Manage Connections”.</p>
+
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-team-connections.png" alt="Visual Studio Team menu, Manage Connections option.">
+    </div>
+  </div>
+</div>
+
+<p>This will bring up the Team Explorer - Connect panel, generally on the right side of the screen. Notice the option for GitHub.</p>
+
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-connect-github.png" alt="Team Explorer, GitHub option.">
+    </div>
+  </div>
+</div>
+
+<p>If you do not already have a GitHub account, you can click the link to sign-up.  Otherwise, click the link to connect and log-in.</p>
+
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-gh-login-dialog.png" alt="GitHub login dialog box.">
+    </div>
+  </div>
+</div>
+
+<p>Once you are signed in, the GitHub view in the Team Explorer updates to allow you to log-out.  Make sure that you do this when working on public or shared computers such as those available on campus.</p>
+
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-gh-signout-reminder.png" alt="GitHub sign out option.">
+    </div>
+  </div>
+</div>
+
+<h2 id="add-a-new-project-to-github">Add a new project to GitHub</h2>
+<p>Open up a project in Visual Studio that you would like to add to GitHub.</p>
+
+<div class="alert alert-info" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":dizzy:" alt=":dizzy:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4ab.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>Remember, that by default all GitHub projects are public.  You may make work private if you have a paid or upgraded student account, but it is not the default.  Work for this class should be public.</p>
+
+    </div>
+  </div>
+</div>
+
+<p>First, we’ll add our project to a local git repository, then connect it up to a remote repository created on GitHub.  There are two ways to do this.</p>
+
+<p>Option 1 - from the File menu, select the Add Solution to Source Control option.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-add-project.png" alt="File Menu, Add option.">
+    </div>
+  </div>
+</div>
+
+<p>Option 2 - in the Solution Explorer, right-click on your project and select Add Solution to Source Control</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-add-project-context.png" alt="Solution Explorer, Add option">
+    </div>
+  </div>
+</div>
+
+<p>A new local git repository is created for you in your project directory.  Notice that it is shown in the Team Explorer.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-local-repo.png" alt="Team Explorer repositories.">
+    </div>
+  </div>
+</div>
+
+<p>If you open Windows Explorer and look at your project directory, you’ll notice a few things have now been added for you.  At least you’ll notice these <em>if</em> you have Window set to show hidden files.  (If you do not see them, look up how to show hidden files for your version of Windows.)</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-git-hiddenfiles.png" alt="Hidden files created.">
+    </div>
+  </div>
+</div>
+
+<p>If you are not using the Visual Studio plugin, you’ll want to manually create a .gitignore file to keep the junk out.  You can use <a href="https://gist.github.com/mbMosman/0b98a0db0ecda4aa39e5a500b390ff6d">my gist</a> to fill in the contents of the file.  Note that it <strong>MUST</strong> be named <code class="highlighter-rouge">.gitignore</code> to work.</p>
+
+<div class="alert alert-info" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":dizzy:" alt=":dizzy:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4ab.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>When working with IDE’s such as Visual Studio and source code management, it is a standard practice to ensure that only your source code and required project configuration is versioned - NOT - miscellaneous files created by the IDE.  Those are considered <em>junk</em> as there tend to be a lot of them, they are generally specific to a user and computer, and they can easily be recreated so they are a waste of space.</p>
+
+    </div>
+  </div>
+</div>
+
+<h2 id="working-locally">Working Locally</h2>
+<p>Return to Visual Studio.  Notice that there is also now git information shown in the bottom right of the status bar at the bottom of Visual Studio.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-git-statusbar.png" alt="Visual Studio status bar git info.">
+    </div>
+  </div>
+</div>
+
+<p>Reviewing the information in the status bar, you might notice that you now have an unpublished commit and several changes.  Let’s see what those changes are and commit them.  If you click the pencil icon that indicates the number of changes, the Team Explorer Changes view shows.  Notice that it indicates we have added files.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-changes.png" alt="Team Explorer Changes">
+    </div>
+  </div>
+</div>
+
+<p>At the top of the display is an area for us to enter our commit comment.  Remember that these messages are used to help you understand what work is done in a particular commit, and so you should enter messages that describe the specific work that you completed.  Enter a message, then click Commit All.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-changes-commit.png" alt="Team Explorer Changes showing commit message.">
+    </div>
+  </div>
+</div>
+
+<p>Notice that on a successful commit, an informational message is shown in the Team Explorer, the changes are cleared from the display and the status bar at the bottom shows no changes and an additional unpublished commit.</p>
+
+<h2 id="publishing-remotely">Publishing Remotely</h2>
+<p>When working with git, it is important to remember that there is both a local and remote repository and that different versions of your files may exist in each.  Versions are initially kept locally on the computer you are currently working on.  To share work with others, or to be able to access that work on a different computer, you must explicitly <em>push</em> those to the remote repository.  Likewise, if updates are made remotely, you must also explicitly <em>pull</em> those changes down to your current computer.</p>
+
+<p>Click the up arrow in the status bar at the bottom right of the screen.  This will open the Team Explorer Synchronization view. Click “Publish to GitHub”.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-sync.png" alt="Team Explorer Synchronization view.">
+    </div>
+  </div>
+</div>
+
+<p>Enter a repository name and optionally a description and click “Publish”.</p>
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-sync-publish.png" alt="Team Explorers, Create remote repository.">
+    </div>
+  </div>
+</div>
+
+<p>If this is successful, you should notice that there are now no unpublished commits and no changes in the status bar at the bottom.  You can also visit the GitHub website to see that your files have been published.</p>
+
+<div style="padding:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+        <img class="img-responsive" src="/spring-2017/morea/getting-started/images/vs-github-repository-web.png" alt="Files shown in the repository on the GitHub website.">
+    </div>
+  </div>
+</div>
+
+<p>If you are not using the plugin, you’d need to first create a repository on their website, then use the command line to add the connection to the remote repository and push the changes.  Fortunately GitHub offers helpful tips on the commands to use for this after you create the repository on their site.</p>
+
+</div>
+
+
+
+
+<script src="/spring-2017/js/scrollIfAnchor.js"></script>
+
+<div class="footer-background hidden-print">
+  <footer>
+    <div class="container page-footer">
+      
+      <p>This course was developed for <a href="https://www.hennepintech.edu/">Hennepin Technical College</a> by <a href="https://www.linkedin.com/in/mary-mosman-43523976">Mary Mosman</a>.</p>
+
+<p>This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License" style="vertical-align: top;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+
+      
+      <p style="margin: 0">This website is developed using the <a href="http://morea-framework.github.io/">Morea Framework</a><br>
+        Last update on: <span>2017-02-06 13:46:45 -0600</span></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
