@@ -25,7 +25,7 @@ For each person (list/stack item) include a sentence or two about that person, w
 
 
 ## Test
-Test your XAML based application using the Android & Windows phone emulators (optionally iOS).  Make sure that the layout looks good and that the calculator actually works.  Take a screenshot of your successful test on each platform to place in the assignment submission box.  
+Test your XAML based application using the Android & Windows phone emulators (optionally iOS).  Make sure that the layout looks good.  Take a screenshot of your successful test on each platform to place in the assignment submission box.  
 
 
 ## Update the original
@@ -33,7 +33,7 @@ Update your original code based application to have the same layout as the XAML 
 
 
 ## Test
-Test your code based application using the Android & Windows phone emulators (optionally iOS).  Make sure that the layout looks good and that the calculator actually works.  Take a screenshot of your successful test on each platform to place in the assignment submission box.  
+Test your code based application using the Android & Windows phone emulators (optionally iOS).  Make sure that the layout looks good.  Take a screenshot of your successful test on each platform to place in the assignment submission box.  
 
 
 ## Submit
