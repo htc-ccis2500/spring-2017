@@ -55,4 +55,8 @@ They can always be added later if needed.
 If you have trouble with the packaged Android emulators, there is an additional installer for a Microsoft Android emulator you can get separately.  The [Visual Studio Emulator for Android](https://www.visualstudio.com/vs/msft-android-emulator/) is said to boot and run faster, is tailored for Visual Studio, and allows saving of various device profiles.
 
 ### Windows Phone
-The Windows Phone emulators require an additional install and there are both Windows 8 and Windows 10 universal emulators.  Both of these may be selected from the Visual Studio install customization screen.  
+The Windows Phone emulators require an additional install and there are both Windows 8 and Windows 10 universal emulators.  Both of these may be selected from the Visual Studio install customization screen under "Windows and Web Development".  
+
+{% include img-small.html url="/morea/getting-started/images/vs-install-win-phone-options.png"
+    alt="Screenshot showing windows phone emulator options in VS Installer."
+%}
