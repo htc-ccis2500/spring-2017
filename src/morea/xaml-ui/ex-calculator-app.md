@@ -14,7 +14,7 @@ morea_labels:
 {{ page.morea_summary }}
 
 ## The Calculator App
-For this project, you can choose to create either a basic calculator such as the one you already have on your phone.  This will allow you to use different layout components, such as a grid view, and tie some simple code to run when events are fired in your application.
+For this project, you will create a basic calculator such as the one you already have on your phone.  This will allow you to use different layout components, such as a grid view, and tie some simple code to run when events are fired in your application.
 
 Create a new Xamarin.Forms XAML application (CalculatorApp) and add it to GitHub.  Push the initial template to the master branch on GitHub, but then remember to setup a development/feature branch to do your work so that you can create a pull-request for grading.
 
