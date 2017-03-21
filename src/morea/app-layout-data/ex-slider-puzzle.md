@@ -18,8 +18,16 @@ For this project, you will build a slider puzzle. The slider puzzle should be ma
 ### Get the images
 You can slice up an image using the following web site: <http://imagesplitter.net/>.  Please make sure that you have choose a safe for class/work image and have rights to use it.  Do not use images that you do not have rights to use.
 
+## Part 1
+Setup the Grid to have sliding images.  Make sure that the grid is responsive to the size of your display.
+
+Update the sample slider demo code so that we have sliding images instead of sliding boxes.
+
+## Part 2
+Finish up the game so that it is winnable.
+
 ## Test
-Test your application using the Android & Windows phone emulators (optionally iOS).  Make sure that the layout looks good and that the calculator actually works.  Take a screenshot of your successful test on each platform __showing each style__ that you defined.
+Test your application using the Android & Windows phone emulators (optionally iOS).  Make sure that the layout looks good and that the calculator actually works.  Take a screenshot of your successful test on each platform that you defined.
 
 
 ## Submit
@@ -33,8 +41,3 @@ Upload the following screenshots to the Assignment box:
 4. A GitHub website screenshot clearly showing your GitHub username, repository and open pull-request
 
 Clearly label all the screenshots and add them individually to the dropbox, or paste them into a single MS Word document to upload.   Please do not zip the screenshots.
-
-## Need more challenge?
-Add sound to your application so that you make noise when clicking buttons on your calculator. This work may be done on the same project and branch as the style work above.
-
-Add a note on your pull-request to indicate that you completed this challenge.
