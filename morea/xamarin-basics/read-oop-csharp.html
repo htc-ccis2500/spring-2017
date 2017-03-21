@@ -194,32 +194,7 @@
 
 <p>The full code for the Animal class is shown below:</p>
 
-<noscript><pre>class Animal
-{
-    // Auto-Implemented property with trivial get and set
-    public int Age { get; set; }
-    
-    // Property with only get and no set outside of constructor
-    private String _name;
-    public String Name {
-        get { return _name; }
-    }
-
-    // Class constructor
-    public Animal(String name)
-    {
-        this._name = name;
-        this.Age = 0;
-    }
-
-    // Generic behavior with virtual method 
-    // Each child class needs to override to change behavior 
-    public virtual void makeNoise()
-    {
-        Console.WriteLine("...");
-    }
-}</pre></noscript>
-<script src="https://gist.github.com/mbMosman/9337264d4d2cd70c32e0e067273be393.js?file=Animal.cs"> </script>
+<p>true<script src="https://gist.github.com/mbMosman/9337264d4d2cd70c32e0e067273be393.js?file=Animal.cs"> </script></p>
 
 <h2 id="inheritance">Inheritance</h2>
 <p>Next let’s inherit from the Animal class to add Lions &amp; Bears.  For each child class, we will override the behavior of the makeNoise method to be appropriate for each specific Animal.</p>
@@ -254,34 +229,11 @@
 
 <p>The full code for the Lion class is shown below:</p>
 
-<noscript><pre>class Lion : Animal
-{
-
-    public Lion(String name):base(name) { }
-
-    // Here we override the base class method to 
-    // make our lion's roar.
-    public override void makeNoise()
-    {
-        Console.WriteLine("Roar!");
-    }
-}</pre></noscript>
-<script src="https://gist.github.com/mbMosman/9337264d4d2cd70c32e0e067273be393.js?file=Lion.cs"> </script>
+<p>true<script src="https://gist.github.com/mbMosman/9337264d4d2cd70c32e0e067273be393.js?file=Lion.cs"> </script></p>
 
 <p>The bear class is similar, but we have the bears say grrr:</p>
 
-<noscript><pre>class Bear : Animal
-{
-    public Bear(String name):base(name) { }
-
-    // Here we override the base class method to 
-    // make our bear's grrr...
-    public override void makeNoise()
-    {
-        Console.WriteLine("Grrr!");
-    }
-}</pre></noscript>
-<script src="https://gist.github.com/mbMosman/9337264d4d2cd70c32e0e067273be393.js?file=Bear.cs"> </script>
+<p>true<script src="https://gist.github.com/mbMosman/9337264d4d2cd70c32e0e067273be393.js?file=Bear.cs"> </script></p>
 
 <h2 id="making-and-using-objects">Making and Using Objects</h2>
 <p>Now that we have these classes, how can we use them?  Let’s create a Lion called Simba.</p>
@@ -341,20 +293,8 @@ Here we must give the name as an argument to the constructor.</p>
 
 <p>When the code runs, as you might expect our lion roars and the bear grrrs.  While this might be what you would expect, it is actually some rather nifty OOP <em>polymorphism</em> magic that you should not take for granted.</p>
 
-<p>The full Program.cs code is shown below:</p>
-<noscript><pre>class Bear : Animal
-{
-    public Bear(String name):base(name) { }
-
-    // Here we override the base class method to 
-    // make our bear's grrr...
-    public override void makeNoise()
-    {
-        Console.WriteLine("Grrr!");
-    }
-}</pre></noscript>
-<script src="https://gist.github.com/mbMosman/9337264d4d2cd70c32e0e067273be393.js?file=Bear.cs"> </script>
-
+<p>The full Program.cs code is shown below:
+true<script src="https://gist.github.com/mbMosman/9337264d4d2cd70c32e0e067273be393.js?file=Bear.cs"> </script></p>
 
 </div>
 
@@ -373,7 +313,7 @@ Here we must give the name as an argument to the constructor.</p>
 
       
       <p style="margin: 0">This website is developed using the <a href="http://morea-framework.github.io/">Morea Framework</a><br>
-        Last update on: <span>2017-03-06 21:53:11 -0600</span></p>
+        Last update on: <span>2017-03-20 22:00:54 -0500</span></p>
     </div>
   </footer>
 </div>
